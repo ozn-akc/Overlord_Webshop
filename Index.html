@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <title>Very Real Online Shop</title>
+</head>
+<?php
+    session_start();
+?>
+<body>
+    <div class="navbar">
+        <div class="col-lg-2 logo clickable">
+            <a href="">
+                <img class="logo-img" src="resources/logo/default-monochrome.svg" alt="Logo">
+            </a>
+        </div>
+        <div class="col-lg-8 links">
+            <h3 class="item clickable" onclick="loadData('home')">
+                HOME
+            </h3>
+            <h3 class="item clickable" onclick="loadData('men')">
+                MEN
+            </h3>
+            <h3 class="item clickable" onclick="loadData('women')">
+                WOMEN
+            </h3>
+            <h3 class="item clickable" onclick="loadData('beyond')">
+                BEYOND
+            </h3>
+            <h3 class="item clickable" onclick="loadData('news')">
+                #NEWS
+            </h3>
+        </div>
+        <div class="col-lg-2 icons" id="icons">
+        </div>
+    </div>
+    <div class="main-content" id="content">
+        <!-- Hier soll der Seiteninhalt geladen werden -->
+    </div>
+    <div class="footer">
+        asdasdub
+    </div>
+    <div class="modal login fade" id="loginModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body login-data">
+                        <form method="POST" id="loginData">
+                            <input class="email" name="email" type="email" placeholder="Email-Adresse" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" required>
+                            <input class="password" name="password" type="password" placeholder="Passwort" required>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" onclick="signUp()">Registrieren</button>
+                        <button class="btn btn-primary" onclick="signIn()">Anmelden</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script lang="js">
+    function requestBuilder(elementId, scriptName, type){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var ref = document.getElementById(elementId);
+                ref.innerHTML = xhr.response;
+            }
+        };
+        xhr.open(type, scriptName);
+        return xhr;
+    }
+    function login(scriptName){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                if(xhr.response==0){
+                    alert("Fehlgeschlagen");
+                }else if(xhr.response==1){
+                    alert("Erfolgreich");
+                }
+            }
+        };
+        xhr.open("POST", scriptName);
+        return xhr;
+    }
+    function signUp(){
+        var xhr = login("login/signUp.php");
+        var data = new FormData(loginData);
+        xhr.send(data);
+    }
+    function signIn(){
+        var xhr = login("login/signIn.php");
+        var data = new FormData(loginData);
+        xhr.send(data);
+        closeLoginDialog();
+    }
+    function closeLoginDialog(){
+        var myModalEl = document.getElementById('loginModal');
+        var modal = bootstrap.Modal.getInstance(myModalEl)
+        modal.hide();
+    }
+    function loadIcons(){
+        var xhr = requestBuilder("icons", "toolbar/icons.php", "GET")
+        xhr.send();
+    }
+    function loadData(){
+        var xhr = requestBuilder("content", "home.html", "GET")
+        xhr.send();
+    }
+    loadIcons();
+</script>
+<style>
+    .clickable{
+        cursor: pointer;
+    }
+
+    body{
+        display: flex;
+        flex-direction: column;
+    }
+
+    .logo{
+        justify-content: center;
+        display: flex;
+    }
+
+    .links{
+        justify-content: center;
+        display: flex;
+    }
+
+    .icons{
+        justify-content: end;
+        display: flex;
+    }
+
+    .logo-img{
+        height: 40px;
+        margin-top: 5px;
+    }
+
+
+    .item{
+        margin:10px;
+    }
+
+    .icon{
+        display: grid;
+        margin-right: 20px;
+    }
+
+    .main-content{
+        height: 800px;
+        width: calc(100% - 16px);
+    }
+
+    .content{
+        width: 80%;
+        height: 80%;
+    }
+
+    .footer{
+        height: 150px;
+        width: 100%;
+    }
+
+    .login-data{
+        display: grid;
+    }
+</style>
