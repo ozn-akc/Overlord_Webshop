@@ -10,7 +10,7 @@ if(isset($_COOKIE["loggedInId"])){
     <div class="icon clickable">
         <span class="material-icons">shopping_cart</span>
     </div>
-    <div class="icon clickable" >
+    <div class="icon clickable" data-bs-toggle="modal" data-bs-target="#logoutModal">
         <span class="material-icons">logout</span>
     </div>
 <?php
