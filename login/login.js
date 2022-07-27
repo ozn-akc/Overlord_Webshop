@@ -1,58 +1,58 @@
 function signUp(){
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             modules.loadIcons();
-            if(xhr.response==0){
-                alert("Fehlgeschlagen");
-            }else if(xhr.response==1){
+            if(xhr.response==1){
+                closeModal("registerModal");
                 alert("Erfolgreich");
+            }else{
+                alert("Fehlgeschlagen");
             }
         }
     };
-    xhr.open("POST", "./login/signUp.php");
-    var data = new FormData(signUpData);
+    xhr.open("POST", "https://localhost/web/login/signUp.php");
+    let data = new FormData(signUpData);
     xhr.send(data);
-    closeModal("registerModal");
     return false;
 }
 function signIn(){
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             modules.loadIcons();
-            if(xhr.response==0){
-                alert("Fehlgeschlagen");
-            }else if(xhr.response==1){
+            if(xhr.response==1){
+                closeModal("loginModal");
                 alert("Erfolgreich");
+            }else{
+                alert("Fehlgeschlagen");
             }
         }
     };
-    xhr.open("POST", "./login/signIn.php");
-    var data = new FormData(signInData);
+    xhr.open("POST", "https://localhost/web/login/signIn.php");
+    let data = new FormData(signInData);
     xhr.send(data);
-    closeModal("loginModal");
     return false;
 }
 function signOut(){
-    var xhr = new XMLHttpRequest();
+    let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
+        if (this.readyState === 4 && this.status === 200) {
             modules.loadIcons();
-            if(xhr.response==0){
-                alert("Fehlgeschlagen");
-            }else if(xhr.response==1){
+            if(xhr.response==1){
+                closeModal("logoutModal");
                 alert("Erfolgreich");
+            }else{
+                alert("Fehlgeschlagen");
             }
         }
     };
-    xhr.open("POST", "./login/signOut.php");
+    xhr.open("POST", "https://localhost/web/login/signOut.php");
     xhr.send();
-    closeModal("logoutModal");
     return false;
 }
 function closeModal(id){
-    var myModalEl = document.getElementById(id);
-    var modal = bootstrap.Modal.getInstance(myModalEl)
+    let myModalEl = document.getElementById(id);
+    let modal = bootstrap.Modal.getInstance(myModalEl)
     modal.hide();
 }

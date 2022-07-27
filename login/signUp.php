@@ -22,6 +22,7 @@ if($safe_email!="" && isset($_POST['password']) ){
     try{
         $result = mysqli_query($my_db, $phpdatabase);
         echo 1;
+        return;
     } catch(Exception $dbe){
         echo 0;
     }

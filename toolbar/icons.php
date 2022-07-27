@@ -5,7 +5,9 @@ if(session_id() == ''){
 if(isset($_COOKIE["loggedInId"])){
     ?>
     <div class="icon clickable">
-        <span class="material-icons">search</span>
+        <a href="https://localhost/web/user">
+            <span class="material-icons" style="color: black!important;">account_circle</span>
+        </a>
     </div>
     <div class="icon clickable">
         <span class="material-icons">shopping_cart</span>
@@ -16,9 +18,6 @@ if(isset($_COOKIE["loggedInId"])){
 <?php
 } else{
 ?>
-    <div class="icon clickable">
-        <span class="material-icons">search</span>
-    </div>
     <div class="icon clickable">
         <span class="material-icons">shopping_cart</span>
     </div>
