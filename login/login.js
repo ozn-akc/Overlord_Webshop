@@ -5,7 +5,6 @@ function signUp(){
             modules.loadIcons();
             if(xhr.response==1){
                 closeModal("registerModal");
-                alert("Erfolgreich");
             }else{
                 alert("Fehlgeschlagen");
             }
@@ -23,7 +22,6 @@ function signIn(){
             modules.loadIcons();
             if(xhr.response==1){
                 closeModal("loginModal");
-                alert("Erfolgreich");
             }else{
                 alert("Fehlgeschlagen");
             }
@@ -41,7 +39,6 @@ function signOut(){
             modules.loadIcons();
             if(xhr.response==1){
                 closeModal("logoutModal");
-                alert("Erfolgreich");
             }else{
                 alert("Fehlgeschlagen");
             }

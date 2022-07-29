@@ -20,3 +20,14 @@ export function loadToBody(scriptName){
     xhr.open("GET", scriptName);
     return xhr;
 }
+
+export function executePHP(scriptName, data){
+    var xhr = new XMLHttpRequest();
+    if(data != undefined){
+        xhr.open("POST", scriptName);
+        xhr.send(data);
+    }else{
+        xhr.open("GET", scriptName);
+        xhr.send();
+    }
+}

@@ -14,7 +14,7 @@
 <body>
 <div class="navbar" id="navbar">
 </div>
-<div class="main-content" id="content">
+<div class="container-fluid" id="content" style="padding: 2rem">
 </div>
 <div class="footer">
 </div>
@@ -24,4 +24,7 @@
     const modules = {};
 </script>
 <script type="module">
+    import {loadHTML} from "../modules/request.js";
+    const books = loadHTML("content", "https://localhost/web/books/loadBooks.php", "POST");
+    books.send();
 </script>
