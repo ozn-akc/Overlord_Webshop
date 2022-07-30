@@ -4,7 +4,7 @@ function signUp(){
         if (this.readyState === 4 && this.status === 200) {
             if(xhr.response==1){
                 closeModal("registerModal");
-                modules.loadIcons();
+                window.location.reload(false)
             }else{
                 alert("Fehlgeschlagen");
             }
@@ -21,7 +21,7 @@ function signIn(){
         if (this.readyState === 4 && this.status === 200) {
             if(xhr.response==1){
                 closeModal("loginModal");
-                modules.loadIcons();
+                window.location.reload(false)
             }else{
                 alert("Fehlgeschlagen");
             }
@@ -38,7 +38,7 @@ function signOut(){
         if (this.readyState === 4 && this.status === 200) {
             if(xhr.response==1){
                 closeModal("logoutModal");
-                modules.loadIcons();
+                window.location.reload(false)
             }else{
                 alert("Fehlgeschlagen");
             }

@@ -25,6 +25,6 @@
 </script>
 <script type="module">
     import {loadHTML} from "../modules/request.js";
-    const books = loadHTML("content", "https://localhost/web/books/loadBooks.php", "POST");
+    const books = loadHTML("content", "https://localhost/web/books/loadBooks.php", "GET");
     books.send();
 </script>

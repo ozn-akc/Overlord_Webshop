@@ -2,6 +2,11 @@
     cursor: pointer;
 }
 
+
+
+.main-content{
+}
+
 body{
     display: flex;
     flex-direction: column;
@@ -11,6 +16,7 @@ body{
     border-style: solid;
     border-width: 0 0 1px 0;
     border-color: black;
+    background-color: #fff;
 }
 
 .nft{

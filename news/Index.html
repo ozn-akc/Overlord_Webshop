@@ -15,6 +15,7 @@
 <div class="navbar" id="navbar">
 </div>
 <div class="main-content" id="content">
+
 </div>
 <div class="footer">
 </div>
@@ -24,4 +25,7 @@
     const modules = {};
 </script>
 <script type="module">
+    import {loadHTML} from "../modules/request.js";
+    const news = loadHTML("content", "https://localhost/web/news/loadNews.php", "GET");
+    news.send();
 </script>

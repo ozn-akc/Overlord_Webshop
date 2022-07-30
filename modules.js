@@ -19,6 +19,10 @@ function loadFramework(){
         data.append('count', "6");
         books.send(data);
     }
+    if(document.getElementById("news")!=undefined){
+        const news = loadHTML("news", "https://localhost/web/news/loadNews.php", "GET");
+        news.send();
+    }
     navbar.send();
     modals.send();
     loadIcons();
@@ -43,13 +47,29 @@ function loadCart(){
     const cartItems = loadHTML("content", "https://localhost/web/cart/loadCart.php", "POST");
     cartItems.send();
 }
+function addSub(id){
+    const data = new FormData;
+    data.append("news_id", id );
+    executePHP("https://localhost/web/news/subscribeToNews.php", data, modules.reloadPage);
+}
+function removeSub(id){
+    const data = new FormData;
+    data.append("news_id", id);
+    executePHP("https://localhost/web/news/unsubFromNews.php", data, modules.reloadPage);
+}
 modules.loadCart = loadCart;
 function loadShit(){
     modules.loadCart();
     modules.loadIcons();
 }
+function reloadPage(){
+    window.location.reload(false);
+}
 loadFramework();
 modules.loadIcons = loadIcons;
 modules.addToCart = addToCart;
 modules.removeFromChart = removeFromChart;
+modules.addSub = addSub;
+modules.removeSub = removeSub;
 modules.loadShit = loadShit;
+modules.reloadPage = reloadPage;

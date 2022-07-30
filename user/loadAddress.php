@@ -28,8 +28,9 @@ if(isset($_COOKIE["loggedInId"])) {
                             <div class="col-md-4">
                                 <input class="form-control" name="plz" id="plz" placeholder="Type to search..." oninput="modules.searchCity()" max="99999" value="' . $text["plz"] . '">
                             </div>
-                            <div class="col-8">
-                                <button class="btn btn-primary col-12" type="submit">Speichern</button>
+                            <div class="d-flex text-center align-content-center justify-content-center">
+                                <button class="btn btn-primary col-4" style="margin-right: 1rem;">Delete</button>
+                                <button class="btn btn-primary col-4" style="margin-left: 1rem;" type="submit">Update</button>
                             </div>
                         </form>
                     </div>
