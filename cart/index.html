@@ -14,12 +14,20 @@
 <body>
 <div class="navbar" id="navbar">
 </div>
-<div class="main-content" id="content">
+<div class="container-fluid" id="content" style="padding: 2rem">
 </div>
 <div class="footer">
 </div>
 </body>
 </html>
 <script type="text/javascript">
-  const modules = {};
+  const modules = {}
+</script>
+<script type="module">
+  import {loadHTML} from "../modules/request.js";
+  function loadCart(){
+    const cartItems = loadHTML("content", "https://localhost/web/cart/loadCart.php", "POST");
+    cartItems.send();
+  }
+  loadCart();
 </script>

@@ -8,11 +8,11 @@ if(isset($_POST['count'])){
         $text = mysqli_fetch_assoc($result);
         echo '
             <div class="text-center" style="padding: 1rem;" style="width: 250px" >
-                <div class="image-container" onclick="modules.addToCart(' . $text["id"] . ', \'1\')">
+                <div class="image-container clickable" onclick="modules.addToCart(' . $text["id"] . ', 1, true)">
                     <img class="image" src="http://localhost' . $text["url"] . '" alt="' . $text["name"] . '" style="width: 250px" >
-                     <div class="middle">
+                    <div class="middle">
                         <span class="material-icons" style="scale: 2">add</span>
-                     </div>
+                    </div>
                 </div>
                 <div style="padding-top: .5rem;"></div>
                 <h6 style="width: 250px" >' . $text["name"] . '</h6>
@@ -22,9 +22,9 @@ if(isset($_POST['count'])){
     while($text = mysqli_fetch_assoc($result)){
         echo '
             <div class="text-center" style="padding: 1rem;" style="width: 250px" >
-                <div class="image-container" onclick="modules.addToCart(' . $text["id"] . ', \'1\')">
+                <div class="image-container clickable" onclick="modules.addToCart(' . $text["id"] . ', 1, true)">
                     <img class="image" src="http://localhost'.$text["url"].'" alt="'.$text["name"].'" style="width: 250px" >
-                     <div class="middle" onclick="modules.addToCart('.$text["id"].', \'1\')">
+                     <div class="middle">
                         <span class="material-icons" style="scale: 2">add</span>
                      </div>
                 </div>

@@ -15,12 +15,6 @@
 <div class="navbar" id="navbar">
 </div>
 <div class="main-content" id="content">
-    <div>
-        <h1>Username</h1>
-    </div>
-    <div>
-        <h1>Address</h1>
-    </div>
 </div>
 <div class="footer">
 </div>
@@ -28,4 +22,48 @@
 </html>
 <script type="text/javascript">
     const modules = {};
+    function saveAddress(){
+        modules.executePHP("https://localhost/web/user/saveAddress.php", new FormData(address), modules.getAddress)
+        return false;
+    }
+    function validateInput(element){
+        const value = document.getElementById(element).value;
+        if(value == ""){
+            document.getElementById(element).className = "form-control is-invalid"
+        }else{
+            document.getElementById(element).className = "form-control is-valid"
+        }
+    }
+    function checkValidation(resp){
+        console.log(resp);
+        const length = document.getElementById("plz").value.length;
+        if(length != 5 || resp == ""){
+            document.getElementById("plz").className = "form-control is-invalid"
+        }else{
+            document.getElementById("plz").className = "form-control is-valid"
+            document.getElementById("city").className = "form-control is-valid"
+        }
+    }
+    function searchCity(){
+        var xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                var ref = document.getElementById("city");
+                ref.value = xhr.response;
+                checkValidation(xhr.response);
+            }
+        };
+        xhr.open("POST", "https://localhost/web/user/getCityFromPLZ.php");
+        xhr.send(new FormData(address));
+    }
+    modules.searchCity = searchCity;
+</script>
+<script type="module">
+    import {loadHTML} from "../modules/request.js";
+    function getAddress(){
+        const address = loadHTML("content","https://localhost/web/user/loadAddress.php","GET");
+        address.send();
+    }
+    getAddress();
+    modules.getAddress = getAddress;
 </script>

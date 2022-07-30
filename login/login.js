@@ -2,9 +2,9 @@ function signUp(){
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            modules.loadIcons();
             if(xhr.response==1){
                 closeModal("registerModal");
+                modules.loadIcons();
             }else{
                 alert("Fehlgeschlagen");
             }
@@ -19,9 +19,9 @@ function signIn(){
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            modules.loadIcons();
             if(xhr.response==1){
                 closeModal("loginModal");
+                modules.loadIcons();
             }else{
                 alert("Fehlgeschlagen");
             }
@@ -36,9 +36,9 @@ function signOut(){
     let xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
-            modules.loadIcons();
             if(xhr.response==1){
                 closeModal("logoutModal");
+                modules.loadIcons();
             }else{
                 alert("Fehlgeschlagen");
             }
