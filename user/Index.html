@@ -26,6 +26,10 @@
         modules.executePHP("https://localhost/web/user/saveAddress.php", new FormData(address), modules.getAddress)
         return false;
     }
+    function deleteAddress(){
+        modules.executePHP("https://localhost/web/user/deleteAddress.php", undefined,  modules.getAddress)
+        return false;
+    }
     function validateInput(element){
         const value = document.getElementById(element).value;
         if(value == ""){
