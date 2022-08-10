@@ -26,7 +26,7 @@ if(isset($_COOKIE["loggedInId"])) {
                                 <input class="form-control" name="city" id="city" placeholder="Stadt" required value="' . $plzText["PLZ-ONAME"] . '" readonly style="background-color: #fff;">
                             </div>
                             <div class="col-md-4">
-                                <input class="form-control" name="plz" id="plz" placeholder="Type to search..." oninput="modules.searchCity()" max="99999" value="' . $text["plz"] . '">
+                                <input class="form-control" name="plz" id="plz" placeholder="PLZ" oninput="modules.searchCity()" max="99999" value="' . $text["plz"] . '">
                             </div>
                             <div class="d-flex text-center align-content-center justify-content-center">
                                 <button class="btn btn-primary col-4" style="margin-right: 1rem;" onclick="deleteAddress()">Delete</button>
@@ -54,7 +54,7 @@ if(isset($_COOKIE["loggedInId"])) {
                                 <input class="form-control" name="city" id="city" placeholder="Stadt" required readonly style="background-color: #fff;">
                             </div>
                             <div class="col-md-4">
-                                <input class="form-control is-invalid" name="plz" id="plz" placeholder="Type to search..." oninput="modules.searchCity()" max="99999">
+                                <input class="form-control is-invalid" name="plz" id="plz" placeholder="PLZ" oninput="modules.searchCity()" max="99999">
                             </div>
                             <div class="col-8">
                                 <button class="btn btn-primary col-12" type="submit">Speichern</button>

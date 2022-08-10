@@ -33,11 +33,11 @@ if(isset($_COOKIE["loggedInId"])) {
                   <div class="col-3 d-flex">
                     <img class="image" src="'.$artikel["url"].'" alt="" style="width: 4rem" >
                     <div class="d-flex justify-content-center flex-column" style="width: 100%">
-                    <div style="display: block ruby;">
+                    <div style="display: flex;">
                         <div class="col-1" style="text-align: center">
                             '.$text["count"].'x 
                         </div>
-                        <div  class="col-4">
+                        <div  class="col-11">
                         '.$artikel["name"].'
                         </div>
                     </div>
