@@ -34,8 +34,43 @@ include("navigation/navigation.php");
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Registrieren</button>
+                        <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#signUpModal">Registrieren</button>
                         <button type="submit" class="btn btn-primary">Anmelden</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- SignUp Dialog -->
+    <div class="modal fade" id="signUpModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Registrierens</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <form  class="needs-validation" id="signInData" onsubmit="return signUp()">
+                    <div class="modal-body d-flex flex-column justify-content-center align-items-center">
+                        <div class="col-8 mb-2">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+                        </div>
+                        <div class="col-8 mb-2 mt-2">
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email Adresse" required>
+                            <div class="invalid-feedback">
+                                Es existiert kein Account für diese Email
+                            </div>
+                        </div>
+                        <div class="col-8 mt-2">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                            <div class="invalid-feedback">
+                                Das Passwort ist falsch!
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+                        <button type="submit" class="btn btn-primary">Registrieren</button>
                     </div>
                 </form>
             </div>
@@ -48,9 +83,45 @@ include("navigation/navigation.php");
         const xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
-                if (xhr.response == 0) {
-                } else {
-                    alert("Fehlgeschlagen");
+                console.log("---"+xhr.response+"---");
+                if(xhr.response==-1){
+                    closeModal("signInModal");
+                    alert("Already logged in");
+                }else if(xhr.response==0) {
+                    document.getElementById("password").className = "form-control";
+                    document.getElementById("email").className = "form-control";
+                    closeModal("signInModal");
+                }else if(xhr.response==1){
+                    document.getElementById("password").className = "form-control is-invalid";
+                    document.getElementById("email").className = "form-control";
+                }else if(xhr.response==2){
+                    document.getElementById("email").className = "form-control is-invalid";
+                    document.getElementById("password").className = "form-control";
+                }
+            }
+        }
+        xhr.open("POST", "https://localhost/web/php/loging/signIn.php");
+        xhr.send(new FormData(signInData));
+        return false;
+    }
+    function signUp(){
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+            if (this.readyState === 4 && this.status === 200) {
+                console.log("---"+xhr.response+"---");
+                if(xhr.response==-1){
+                    closeModal("signInModal");
+                    alert("Already logged in");
+                }else if(xhr.response==0) {
+                    document.getElementById("password").className = "form-control";
+                    document.getElementById("email").className = "form-control";
+                    closeModal("signInModal");
+                }else if(xhr.response==1){
+                    document.getElementById("password").className = "form-control is-invalid";
+                    document.getElementById("email").className = "form-control";
+                }else if(xhr.response==2){
+                    document.getElementById("email").className = "form-control is-invalid";
+                    document.getElementById("password").className = "form-control";
                 }
             }
         }
