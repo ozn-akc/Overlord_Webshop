@@ -1,3 +1,7 @@
+.clickable{
+    cursor: pointer;
+}
+
 .custom-container {
     width: calc(100%  - 12rem);
     height: calc(100vh  - 8rem);
@@ -13,5 +17,6 @@
     font-size: 32px!important;
 }
 
-.dropdown-menu{
+.icon-container{
+    margin: .5rem;
 }

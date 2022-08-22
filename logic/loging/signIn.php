@@ -12,7 +12,7 @@ if(isset($_COOKIE["loggedId"])){
         $password = hash("sha256", $_POST['password']);
         $password = hash("sha256", $password.$dbdata["salt"]);
         if($dbdata["password"] == $password){
-            setcookie("loggedId", $dbdata["id"],array('expires' => time()+3600, 'samesite' => 'lax'));
+            setcookie("loggedId", $dbdata["id"],array('path' => '/', 'expires' => time()+7200, 'secure' => true, 'samesite' => 'lax'));
             echo 0;
         }else{
             echo 1;
