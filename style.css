@@ -1,0 +1,17 @@
+.custom-container {
+    width: calc(100%  - 12rem);
+    height: calc(100vh  - 8rem);
+    padding: 2rem;
+    margin: 2rem 6rem;
+}
+
+.navbar{
+    height: 4rem;
+}
+
+.icon{
+    font-size: 32px!important;
+}
+
+.dropdown-menu{
+}
