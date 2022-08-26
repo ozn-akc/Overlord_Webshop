@@ -17,7 +17,7 @@
         </div>
     </div>
     <div id="logo" class="col-6 d-flex flex-column text-center clickable">
-        <h2 class="clickable" onclick="window.location.href = '/web/'">Seven Circles</h2>
+        <h1 class="clickable" onclick="window.location.href = '/web/'">Seven Circles</h1>
     </div>
     <div id="icons" class="col-3 d-flex justify-content-end pe-3">
         <?php
