@@ -3,10 +3,12 @@
 }
 
 .custom-container {
-    width: calc(100%  - 12rem);
-    height: calc(100vh  - 8rem);
-    padding: 2rem;
-    margin: 2rem 6rem;
+    width: 100%;
+    height: calc(100vh  - 4rem);
+    padding: 3rem 8rem;
+    position: absolute!important;
+    top: 4rem!important;
+    overflow: auto;
 }
 
 .navbar{
