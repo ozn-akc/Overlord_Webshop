@@ -1,3 +1,8 @@
+body{
+    background-image: url("https://localhost/web/resources/logo/background.webp");
+    color: white!important;
+}
+
 .clickable{
     cursor: pointer;
 }

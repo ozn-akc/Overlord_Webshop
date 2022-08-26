@@ -1,6 +1,11 @@
-<div id="navigation"  class="navbar fixed-top" style="background-color: white">
-    <div id="links" class="col-3 d-flex flex-row align-items-center">
-        <div class="dropdown me-3 ms-2">
+<div id="navigation"  class="navbar fixed-top navbar-dark align-items-start">
+    <div id="links" class="col-3 d-flex flex-row">
+        <div class="me-3 ms-2">
+            <h5 onclick="window.location.href='/web/'">
+                Home
+            </h5>
+        </div>
+        <div class="dropdown">
             <h5 class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Shop
             </h5>
@@ -10,19 +15,9 @@
                 <li><a class="dropdown-item" href="/web/other/">Other</a></li>
             </ul>
         </div>
-        <div class="dropdown me-3">
-            <h5 class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Shop
-            </h5>
-            <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Action</a></li>
-                <li><a class="dropdown-item" href="#">Another action</a></li>
-                <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
-        </div>
     </div>
-    <div id="logo" class="col-6 text-center clickable">
-        <h1 class="clickable" onclick="window.location.href = '/web/'">Webengineering Project</h1>
+    <div id="logo" class="col-6 d-flex flex-column text-center clickable">
+        <h2 class="clickable" onclick="window.location.href = '/web/'">Seven Circles</h2>
     </div>
     <div id="icons" class="col-3 d-flex justify-content-end pe-3">
         <?php

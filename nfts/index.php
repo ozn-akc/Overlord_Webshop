@@ -7,58 +7,31 @@ include("../navigation/navigation.php");
 include ("../account/signing.php");
 ?>
 <div id="content" class="custom-container d-flex flex-column justify-content-start">
-    <div class="item-container d-flex flex-column justify-content-center align-items-center">
-        <div class="image-container">
-            <img class="image clickable" style="width: 18rem" src="../resources/nfts/masked_1.png">
-        </div>
-        <div class="m-5">
-            <button class="btn btn-primary">Download</button>
-        </div>
-        <div class="m-5 border-end">
-
-        </div>
-    </div>
-    <div class="d-flex flex-row flex-wrap justify-content-start">
-        <div class="artikel-container">
-            <div class="image-container">
-                <img class="image clickable" src="../resources/nfts/masked_1.png">
-            </div>
-        </div>
-        <div class="artikel-container">
-            <div class="image-container">
-                <img class="image clickable" src="../resources/nfts/masked_1.png">
-            </div>
-        </div>
-        <div class="artikel-container">
-            <div class="image-container">
-                <img class="image clickable" src="../resources/nfts/masked_1.png">
-            </div>
-        </div>
-        <div class="artikel-container">
-            <div class="image-container">
-                <img class="image clickable" src="../resources/nfts/masked_1.png">
-            </div>
-        </div>
-        <div class="artikel-container">
-            <div class="image-container">
-                <img class="image clickable" src="../resources/nfts/masked_1.png">
-            </div>
-        </div>
-        <div class="artikel-container">
-            <div class="image-container">
-                <img class="image clickable" src="../resources/nfts/masked_1.png">
-            </div>
-        </div>
-        <div class="artikel-container">
-            <div class="image-container">
-                <img class="image clickable" src="../resources/nfts/masked_1.png">
-            </div>
-        </div>
-    </div>
 </div>
 </body>
 </html>
 <script>
+    function loadNFTs(){
+        const searchParams = window.location.search;
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () =>{
+            if(xhr.status==200){
+                document.getElementById("content").innerHTML = xhr.response;
+            }
+        }
+        xhr.open("GET", "https://localhost/web/logic/shop/loadNFTs.php/"+searchParams);
+        xhr.send();
+    }
+    loadNFTs();
+    function downloadImage(filename, name){
+        var link = document.createElement("a");
+        link.download = name;
+        link.href = filename;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        delete link;
+    }
 </script>
 <style>
     .item-container{
@@ -81,7 +54,6 @@ include ("../account/signing.php");
     }
     .image{
         display: block;
-        width: 100%;
-        height: 100%;
+        height: 300px;
     }
 </style>

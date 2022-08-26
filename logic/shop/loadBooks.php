@@ -2,6 +2,7 @@
 require __DIR__ . ('/../database.php');
 $sql = "SELECT * FROM artikel";
 $res = mysqli_query($my_db, $sql);
+
 if(isset($_GET["count"])){
     for($i = 0; $i < $_GET["count"]; $i++){
         $artikel = mysqli_fetch_assoc($res);
