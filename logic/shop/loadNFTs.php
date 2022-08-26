@@ -13,11 +13,10 @@ if(isset($_GET["id"])){
         <div class="image-container">
             <img class="image clickable" src="<?php echo $item["url"]?>">
         </div>
-        <div class="m-2"></div>
-        <div class="m-5 col-12 d-flex justify-content-center">
+        <div class="m-3"></div>
+        <div class="m-3 col-12 d-flex justify-content-center">
             <button class="btn btn-light" style="width: 150px" onclick="downloadImage('<?php echo $item["url"]?>','<?php echo $item["name"]?>')">Download</button>
         </div>
-        <div class="m-2"></div>
     </div>
     <?php
     }

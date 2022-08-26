@@ -35,7 +35,6 @@ include ("../account/signing.php");
 </script>
 <style>
     .item-container{
-        height: 50vh;
     }
 
     .artikel-container{

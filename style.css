@@ -1,6 +1,26 @@
 body{
     background-image: url("https://localhost/web/resources/logo/background.webp");
     color: white!important;
+    background-color: #202124!important;
+}
+
+.modal-content{
+    background-color: #202124!important;
+}
+
+.form-control{
+    background-color: #202124!important;
+    color: white!important;
+}
+
+.dropdown-menu{
+    background-color: #202124!important;
+    color: white!important;
+}
+
+li a{
+    background-color: #202124!important;
+    color: white!important;
 }
 
 .clickable{

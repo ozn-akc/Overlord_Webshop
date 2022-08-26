@@ -22,8 +22,8 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-toggle="modal" data-bs-target="#signUpModal">Registrieren</button>
-                    <button type="submit" class="btn btn-primary">Anmelden</button>
+                    <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#signUpModal">Registrieren</button>
+                    <button type="submit" class="btn btn-outline-light">Anmelden</button>
                 </div>
             </form>
         </div>
@@ -54,7 +54,7 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Registrieren</button>
+                    <button type="submit" class="btn btn-outline-light">Registrieren</button>
                 </div>
             </form>
         </div>
@@ -71,7 +71,7 @@
             </div>
             <form  class="needs-validation" id="signOutData" onsubmit="return signOut()">
                 <div class="modal-footer">
-                    <button type="submit" class="btn btn-primary">Abmelden</button>
+                    <button type="submit" class="btn btn-outline-light">Abmelden</button>
                 </div>
             </form>
         </div>
