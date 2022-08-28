@@ -26,7 +26,7 @@ include ("../account/signing.php");
 </script>
 <style>
     .artikel-container{
-        width: 14rem;
+        width: 20%;
         height: fit-content;
         margin: 1rem 2rem;
         display: flex;

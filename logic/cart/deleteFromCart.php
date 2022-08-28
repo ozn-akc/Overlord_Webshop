@@ -9,5 +9,4 @@ if(isset($_POST["user_id"]) && isset($_POST["artikel_id"])){
     $selectData = mysqli_fetch_assoc($selectResponse);
     $deleteSql = "DELETE FROM cart WHERE user_id = '" . $userId . "' and artikel_id = '". $artikelId."';";
     $deleteResponse = mysqli_query($my_db, $deleteSql);
-    $deleteData = mysqli_fetch_assoc($deleteResponse);
 }
