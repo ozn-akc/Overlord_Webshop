@@ -99,7 +99,7 @@
                 }
             }
         }
-        xhr.open("POST", "https://localhost/web/logic/loging/signIn.php");
+        xhr.open("POST", "http://localhost/web/logic/loging/signIn.php");
         xhr.send(new FormData(signInData));
         return false;
     }
@@ -115,7 +115,7 @@
                 }
             }
         }
-        xhr.open("POST", "https://localhost/web/logic/loging/signUp.php");
+        xhr.open("POST", "http://localhost/web/logic/loging/signUp.php");
         xhr.send(new FormData(signUpData));
         return false;
     }
@@ -131,7 +131,7 @@
                 }
             }
         }
-        xhr.open("POST", "https://localhost/web/logic/loging/signOut.php");
+        xhr.open("POST", "http://localhost/web/logic/loging/signOut.php");
         xhr.send(new FormData(signOutData));
         return false;
     }

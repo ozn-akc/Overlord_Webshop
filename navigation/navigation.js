@@ -9,7 +9,7 @@ function addToCart(artikel_id){
     data.append("user_id","5");
     data.append("artikel_id",artikel_id);
     data.append("anzahl","1");
-    xhr.open("POST", "https://localhost/web/logic/cart/addToCart.php");
+    xhr.open("POST", "http://localhost/web/logic/cart/addToCart.php");
     xhr.send(data);
 }
 function removeFromCart(artikel_id){
@@ -23,7 +23,7 @@ function removeFromCart(artikel_id){
     data.append("user_id","5");
     data.append("artikel_id",artikel_id);
     data.append("anzahl","-1");
-    xhr.open("POST", "https://localhost/web/logic/cart/addToCart.php");
+    xhr.open("POST", "http://localhost/web/logic/cart/addToCart.php");
     xhr.send(data);
 }
 function deleteFromCart(artikel_id){
@@ -36,7 +36,7 @@ function deleteFromCart(artikel_id){
     const data = new FormData;
     data.append("user_id","5");
     data.append("artikel_id",artikel_id);
-    xhr.open("POST", "https://localhost/web/logic/cart/deleteFromCart.php");
+    xhr.open("POST", "http://localhost/web/logic/cart/deleteFromCart.php");
     xhr.send(data);
 }
 function loadCart(){
@@ -48,7 +48,7 @@ function loadCart(){
             }
         }
     }
-    xhr.open("GET", "https://localhost/web/logic/cart/loadCartDropdown.php/?user_id=5");
+    xhr.open("GET", "http://localhost/web/logic/cart/loadCartDropdown.php/?user_id=5");
     xhr.send();
 }
 loadCart();

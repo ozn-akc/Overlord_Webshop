@@ -19,7 +19,7 @@ include ("../account/signing.php");
                 document.getElementById("content").innerHTML = xhr.response;
             }
         }
-        xhr.open("GET", "https://localhost/web/logic/shop/loadNFTs.php/"+searchParams);
+        xhr.open("GET", "http://localhost/web/logic/shop/loadNFTs.php/"+searchParams);
         xhr.send();
     }
     loadNFTs();

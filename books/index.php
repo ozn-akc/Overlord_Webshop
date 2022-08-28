@@ -19,7 +19,7 @@ include ("../account/signing.php");
                 document.getElementById("content").innerHTML = xhr.response;
             }
         }
-        xhr.open("GET", "https://localhost/web/logic/shop/loadBooks.php");
+        xhr.open("GET", "http://localhost/web/logic/shop/loadBooks.php");
         xhr.send();
     }
     loadBooks();
