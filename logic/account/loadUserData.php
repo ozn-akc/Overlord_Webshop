@@ -15,7 +15,7 @@ if(isset($_COOKIE["loggedId"])) {
             </div>
         </div>
         <div class="col-8 d-flex flex-row mb-4 justify-content-start">
-            <div class="col-12 d-flex flex-row">
+            <div class="col-12 d-flex flex-column">
                 <input type="email" class="form-control" id="email" name="email" placeholder="Email Adresse" value="<?php echo $user["email"];?>" disabled>
                 <div class="invalid-feedback">
                     Es existiert bereits ein Account für diese Email.
@@ -42,7 +42,7 @@ if(isset($_COOKIE["loggedId"])) {
                 <div class="col-12">
                     <input type="text" class="form-control" id="street" name="street" placeholder="Street" value="<?php echo $addr["street"];?>" disabled>
                 </div>
-                <div class="ms-2">
+                <div class="ms-3">
                     <span class="icon material-icons-outlined clickable" onclick="enableById('street')">edit</span>
                 </div>
             </div>
@@ -50,7 +50,7 @@ if(isset($_COOKIE["loggedId"])) {
                 <div class="col-12">
                     <input type="text" class="form-control" id="number" name="number" placeholder="Number" value="<?php echo $addr["number"];?>" disabled>
                 </div>
-                <div class="ms-2">
+                <div class="ms-3">
                     <span class="icon material-icons-outlined clickable" onclick="enableById('number')">edit</span>
                 </div>
             </div>
@@ -60,18 +60,18 @@ if(isset($_COOKIE["loggedId"])) {
                 </div>
             </div>
             <div class="col-8 d-flex flex-row mb-4 justify-content-start">
-                <div class="col-12 d-flex flex-row">
+                <div class="col-12 d-flex flex-column">
                     <input type="text" class="form-control" id="code" name="code" placeholder="Code" value="<?php echo $addr["plz"];?>" disabled oninput="loadAddress()">
                     <div class="invalid-feedback">
                         PLZ ist nicht valide.
                     </div>
                 </div>
-                <div class="ms-2">
+                <div class="ms-3">
                     <span class="icon material-icons-outlined clickable" onclick="enableById('code')">edit</span>
                 </div>
             </div>
         </div>
-        <button type="submit" class="btn btn-light col-5">Save</button>
+        <button id="saveUserData" type="submit" class="btn btn-light col-5 mt-3">Save</button>
     </form>
 
     <?php

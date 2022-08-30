@@ -23,9 +23,11 @@ include ("../account/signing.php");
                     alert("You are not logged in!");
                 }else if(xhr.response == "2"){
                     document.getElementById("code").className="form-control is-invalid";
+                    document.getElementById("saveUserData").disabled = true;
                 }else{
                     document.getElementById("code").className="form-control";
                     document.getElementById("city").value = xhr.response;
+                    document.getElementById("saveUserData").disabled = false;
                 }
             }
         }
@@ -39,7 +41,6 @@ include ("../account/signing.php");
         xhr.onreadystatechange = () =>{
             if(xhr.status==200){
                 if(xhr.response == "-1"){
-
                 }else{
                     document.getElementById("content").innerHTML = xhr.response;
                 }
@@ -54,7 +55,7 @@ include ("../account/signing.php");
         const xhr = new XMLHttpRequest();
         xhr.onreadystatechange = () =>{
             if(xhr.status==200){
-                if(xhr.responseText.includes("2")){
+                if(xhr.respone == "2"){
                     document.getElementById("email").className="form-control is-invalid"
                 }
             }

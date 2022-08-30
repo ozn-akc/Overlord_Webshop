@@ -1,5 +1,7 @@
 body{
     background-image: url("http://localhost/web/resources/logo/background.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
     color: white!important;
     background-color: transparent!important;
 }
