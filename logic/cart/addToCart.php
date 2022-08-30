@@ -1,7 +1,7 @@
 <?php
-if(isset($_POST["user_id"]) && isset($_POST["artikel_id"]) && isset($_POST["anzahl"])){
+if(isset($_COOKIE["loggedId"]) && isset($_POST["artikel_id"]) && isset($_POST["anzahl"])){
     require('../database.php');
-    $userId = $_POST["user_id"];
+    $userId = $_COOKIE["loggedId"];
     $artikelId = $_POST["artikel_id"];
     $anzahl = $_POST["anzahl"];
 

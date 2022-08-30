@@ -6,9 +6,14 @@ $res = mysqli_query($my_db, $sql);
 if(isset($_GET["count"])){
     for($i = 0; $i < $_GET["count"]; $i++){
         $artikel = mysqli_fetch_assoc($res);
+        if(isset($_COOKIE["loggedId"])){
+            $buttonaction = 'data-bs-toggle="modal" data-bs-target="#signInModal"';
+        }else{
+            $buttonaction = 'onclick="addToCart('. $artikel["id"].')"';
+        }
         ?>
         <div class="artikel-container">
-            <div class="image-container" onclick="addToCart(<?php echo $artikel["id"]?>)">
+            <div class="image-container" <?php echo $buttonaction?>>
                 <div class="middle">
                     <span class="material-icons-outlined" style="scale: 2">add</span>
                 </div>
@@ -22,9 +27,14 @@ if(isset($_GET["count"])){
     }
 }else{
     while($artikel = mysqli_fetch_assoc($res)){
+        if(isset($_COOKIE["loggedId"])){
+            $buttonaction = 'onclick="addToCart('. $artikel["id"].')"';
+        }else{
+            $buttonaction = 'data-bs-toggle="modal" data-bs-target="#signInModal"';
+        }
         ?>
         <div class="artikel-container">
-            <div class="image-container" onclick="addToCart(<?php echo $artikel["id"]?>)">
+            <div class="image-container" <?php echo $buttonaction?>>
                 <div class="middle">
                     <span class="material-icons-outlined" style="scale: 2">add</span>
                 </div>

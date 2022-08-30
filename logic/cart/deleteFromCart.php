@@ -1,7 +1,7 @@
 <?php
-if(isset($_POST["user_id"]) && isset($_POST["artikel_id"])){
+if(isset($_COOKIE["loggedId"]) && isset($_POST["artikel_id"])){
     require('../database.php');
-    $userId = $_POST["user_id"];
+    $userId = $_COOKIE["loggedId"];
     $artikelId = $_POST["artikel_id"];
     $selectSql = "SELECT * FROM cart WHERE user_id = '" . $userId . "' and artikel_id = '". $artikelId."';";
     $selectResponse = mysqli_query($my_db, $selectSql);

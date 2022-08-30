@@ -1,7 +1,7 @@
 body{
     background-image: url("http://localhost/web/resources/logo/background.webp");
     color: white!important;
-    background-color: #202124!important;
+    background-color: transparent!important;
 }
 
 .modal-content{
@@ -13,13 +13,18 @@ body{
     color: white!important;
 }
 
+.form-control:disabled{
+    background-color: #3c4043!important;
+    color: white!important;
+}
+
 .dropdown-menu{
     background-color: #202124!important;
     color: white!important;
 }
 
 li a{
-    background-color: #202124!important;
+    background-color: transparent!important;
     color: white!important;
 }
 

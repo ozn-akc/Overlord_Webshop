@@ -1,7 +1,7 @@
 <?php
-if(isset($_GET["user_id"])) {
+if(isset($_COOKIE["loggedId"])) {
     require('../database.php');
-    $userId = $_GET["user_id"];
+    $userId = $_COOKIE["loggedId"];
     $hasData = false;
     $selectSql = "SELECT * FROM cart WHERE user_id = '" . $userId . "'";
     $selectResponse = mysqli_query($my_db, $selectSql);

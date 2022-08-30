@@ -24,46 +24,4 @@ include ("../account/signing.php");
     }
     loadBooks();
 </script>
-<style>
-    .artikel-container{
-        width: 20%;
-        height: fit-content;
-        margin: 1rem 2rem;
-        display: flex;
-        flex-wrap: wrap;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .image-container{
-        position: relative;
-        width: 12rem;
-    }
-    .image{
-        opacity: 1;
-        display: block;
-        width: 100%;
-        height: auto;
-        transition: .5s ease;
-        backface-visibility: hidden;
-    }
-    .middle {
-        transition: .5s ease;
-        opacity: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        text-align: center;
-    }
-    .image-container:hover .image {
-        opacity: 0.3;
-    }
-    .image-container:hover .middle {
-        opacity: 1;
-    }
-    .title{
-        width: 12rem;
-    }
-</style>
+<link rel="stylesheet" href="books.css">
