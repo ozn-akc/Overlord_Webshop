@@ -71,7 +71,7 @@ if(isset($_COOKIE["loggedId"])) {
                 </div>
             </div>
         </div>
-        <button id="saveUserData" type="submit" class="btn btn-light col-5 mt-3">Save</button>
+        <input id="saveButton" type="submit" class="btn btn-light col-5 mt-3" value="Save">
     </form>
 
     <?php

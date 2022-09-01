@@ -6,6 +6,11 @@ body{
     background-color: transparent!important;
 }
 
+.btn-dark{
+    background-color: #3c4043!important;
+    color: white!important;
+}
+
 .modal-content{
     background-color: #202124!important;
 }

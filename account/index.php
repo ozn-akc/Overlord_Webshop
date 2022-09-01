@@ -23,11 +23,11 @@ include ("../account/signing.php");
                     alert("You are not logged in!");
                 }else if(xhr.response == "2"){
                     document.getElementById("code").className="form-control is-invalid";
-                    document.getElementById("saveUserData").disabled = true;
+                    document.getElementById("saveButton").disabled = true;
                 }else{
                     document.getElementById("code").className="form-control";
                     document.getElementById("city").value = xhr.response;
-                    document.getElementById("saveUserData").disabled = false;
+                    document.getElementById("saveButton").disabled = false;
                 }
             }
         }
@@ -57,6 +57,8 @@ include ("../account/signing.php");
             if(xhr.status==200){
                 if(xhr.respone == "2"){
                     document.getElementById("email").className="form-control is-invalid"
+                }else if(xhr.response == "1"){
+                    loadUserData();
                 }
             }
         }
@@ -65,7 +67,6 @@ include ("../account/signing.php");
         xhr.send(data);
         return false;
     }
-
 </script>
 <style>
 </style>

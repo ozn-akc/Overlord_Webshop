@@ -20,9 +20,9 @@ if(isset($_COOKIE["loggedId"])) {
                       <div class="ps-2 d-flex flex-column col-9 justify-content-center align-items-center">
                           <div class="text-start">' . $artikelData["name"] . '</div>
                           <div class="d-flex flex-row justify-content-center align-self-start border border-dark">
-                              <span class="material-icons-outlined d-flex align-items-center me-2" style="font-size: 16px" onclick="addToCart(' . $selectData["artikel_id"] . ')">add</span>
+                              <span class="material-icons-outlined d-flex align-items-center me-2" style="font-size: 16px" onclick="removeFromCart(' . $selectData["artikel_id"] . ')">remove</span>
                               <div>' . $selectData["count"] . '</div>
-                              <span class="material-icons-outlined d-flex align-items-center ms-2" style="font-size: 16px" onclick="removeFromCart(' . $selectData["artikel_id"] . ')">remove</span>
+                              <span class="material-icons-outlined d-flex align-items-center ms-2" style="font-size: 16px" onclick="addToCart(' . $selectData["artikel_id"] . ')">add</span>
                           </div>
                       </div>
                       <div class="col-1 d-flex p-1">
@@ -33,9 +33,9 @@ if(isset($_COOKIE["loggedId"])) {
         ';
     }
     if ($hasData) {
-        echo '
-            <li class="d-block text-center  mt-2"><Button class="btn btn-primary col-10">Kaufen</Button>
+        ?>
+            <li class="d-block text-center  mt-2"><Button class="btn btn-light col-10" onclick="window.location.href = '/web/cart/'">Kaufen</Button>
             </li>
-        ';
+        <?php
     }
 }

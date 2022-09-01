@@ -22,7 +22,7 @@ if($artikel = mysqli_fetch_assoc($res)){
                 <?php echo $artikel["description"] ?>
             </div>
             <div class="col-10 m-2 mt-5 d-flex justify-content-center">
-                <Button class="btn btn-primary col-4" <?php echo $buttonaction ?>)>ADD TO CART</Button>
+                <Button class="btn btn-light col-4" <?php echo $buttonaction ?>)>ADD TO CART</Button>
             </div>
         </div>
     </div>

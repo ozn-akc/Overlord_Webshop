@@ -5,15 +5,19 @@
                 Home
             </h5>
         </div>
-        <div class="dropdown me-3">
+        <div class="dropdown me-3 ms-2">
             <h5 class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Shop
             </h5>
             <ul class="dropdown-menu">
                 <li><a class="dropdown-item" href="/web/books/">Books</a></li>
                 <li><a class="dropdown-item" href="/web/nfts/">NFTs</a></li>
-                <li><a class="dropdown-item" href="/web/other/">Other</a></li>
             </ul>
+        </div>
+        <div class="me-3 ms-2">
+            <h5 onclick="window.location.href='/web/news'">
+                News
+            </h5>
         </div>
         <div class="me-3 ms-2">
             <h5 onclick="window.location.href='/web/docs'">
@@ -31,9 +35,9 @@
                 <div class="icon-container">
                     <div class="position-relative">
                         <span class="icon material-icons-outlined clickable" data-bs-toggle="dropdown" aria-expanded="false">shopping_bag</span>
-                        <div class="dropdown-menu dropdown-menu-lg-end me-2 clickable">
+                        <div class="dropdown-menu dropdown-menu-lg-end clickable">
                             <h2 class="text-center">Einkaufswagen</h2>
-                            <ul class="overflow-auto ps-0" id="cart-dropdown" style="width: 350px; max-height: 63vh;"></ul>
+                            <ul class="overflow-auto ps-0 mb-0" id="cart-dropdown" style="width: 350px; max-height: 63vh;"></ul>
                         </div>
                     </div>
                 </div>

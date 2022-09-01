@@ -43,6 +43,7 @@ if(isset($_COOKIE["loggedId"])) {
         $updateCode = "UPDATE address SET plz = \"".$_POST["code"]."\"".$whereAddr;
         mysqli_query($my_db, $updateCode); //possibly add to end
     }
+    echo "1";
 
 }else{
     echo "-1";
