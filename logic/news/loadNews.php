@@ -52,7 +52,7 @@ if(isset($_COOKIE["loggedId"])) {
 
         <form class="border border-light p-4 text-center rounded-4 mb-4 d-flex flex-column align-items-center" style="height: fit-content;" id="newsletter" onsubmit="return addEmailToNewsletter()">
             <h1 class="mb-4">
-                Would you like to subscribe to the general Newsletter!
+                Surprise Newsletter!
             </h1>
             <input type="email" class="form-control mb-4" style="width: 50%!important;" id="email" name="email" placeholder="Email Adresse" required>
             <button class="btn btn-light col-4" type="submit">Subscribe</button>
