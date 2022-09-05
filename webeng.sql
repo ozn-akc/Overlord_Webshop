@@ -6,6 +6,8 @@
 -- Erstellungszeit: 26. Aug 2022 um 23:07
 -- Server-Version: 10.4.24-MariaDB
 -- PHP-Version: 8.1.6
+create database webeng;
+use webeng;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;

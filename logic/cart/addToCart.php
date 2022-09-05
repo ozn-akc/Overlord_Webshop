@@ -10,8 +10,10 @@ if(isset($_COOKIE["loggedId"]) && isset($_POST["artikel_id"]) && isset($_POST["a
 
     $selectData = mysqli_fetch_assoc($selectResponse);
     if(isset($selectData["user_id"])){
+        $count = $selectData["count"]+$anzahl;
+        echo $count;
         if($selectData["count"]+$anzahl>0){
-            $sql = "UPDATE  cart SET count='".$selectData["count"]+$anzahl."' WHERE user_id = '" . $userId . "' and artikel_id = '". $artikelId."';";
+            $sql = "UPDATE  cart SET count='".$count."' WHERE user_id = '" . $userId . "' and artikel_id = '". $artikelId."';";
         }else{
             $sql = "DELETE FROM cart WHERE user_id = '" . $userId . "' and artikel_id = '". $artikelId."';";
         }
