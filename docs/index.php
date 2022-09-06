@@ -31,25 +31,26 @@ include ("../account/signing.php");
     <div class="d-flex flex-column align-items-center border-bottom pb-4 col-8" style="height: fit-content">
         <h1 class="text-center pb-4 mt-4">NFTs</h1>
         <div class="col-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi autem consectetur corporis, debitis ea eligendi ex impedit incidunt iure labore nam nobis omnis optio quasi quo sint tenetur velit veniam.
+            The NFTpage contains a list of available NFTS. The user can choose any nft they like by clicking on it. The page get reloaded with the selected NFT and you can click the download button to download the NFT as a png.
         </div>
     </div>
     <div class="d-flex flex-column align-items-center border-bottom pb-4 col-8" style="height: fit-content">
-        <h1 class="text-center pb-4 mt-4">Other</h1>
+        <h1 class="text-center pb-4 mt-4">News</h1>
         <div class="col-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi autem consectetur corporis, debitis ea eligendi ex impedit incidunt iure labore nam nobis omnis optio quasi quo sint tenetur velit veniam.
+            The Newspage shows all available Newspapers. The Books and NFT Newspaper can only be subscribed to when the user is logged in. The random Newsletter can be subscribed to when the user enters their Email address.
         </div>
     </div>
     <div class="d-flex flex-column align-items-center border-bottom pb-4 col-8" style="height: fit-content">
         <h1 class="text-center pb-4 mt-4">Account</h1>
         <div class="col-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi autem consectetur corporis, debitis ea eligendi ex impedit incidunt iure labore nam nobis omnis optio quasi quo sint tenetur velit veniam.
+            The Accountpage contains the Accountdata, which the user can update as they choose. They can change their name, their email, and their Address. The Postalcode autofills the city in order to prevent Wrong inputs.
         </div>
     </div>
     <div class="d-flex flex-column align-items-center pb-4 col-8" style="height: fit-content">
         <h1 class="text-center pb-4 mt-4">Cart</h1>
         <div class="col-8">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi autem consectetur corporis, debitis ea eligendi ex impedit incidunt iure labore nam nobis omnis optio quasi quo sint tenetur velit veniam.
+            The Cart contians the Items the user wants to buy, those Items are displayed in a List with their image, title and 3 buttons to add, remove a singular item and delete the entire Item from the cart.
+            The Button at the end allows the user to "buy" those items, onclick the user is sent to the receipt page, where they get their receipt and the cart get deleted.
         </div>
     </div>
 </div>
