@@ -103,14 +103,14 @@ if(isset($_COOKIE["loggedId"])) {
 
         <div class="d-flex flex-row cart-item border-bottom p-1">
             <div class="pe-2 col-2 d-flex align-items-center">
-                <a href="/web/artikel/?id=<?php echo $cartData["artikel_id"] ?>"><img class="p-1" src="<?php echo $artikelData["url"] ?>" alt="shit" style="height: 160px"></a>
+                <a href="/web/artikel/?id=<?php echo $cartData["artikel_id"] ?>"><img class="p-1 clickable" src="<?php echo $artikelData["url"] ?>" alt="shit" style="height: 160px"></a>
             </div>
             <div class="ps-2 d-flex flex-column col-9 justify-content-center align-items-center">
                 <h3 class="text-start align-self-start"><?php echo $artikelData["name"]?></h3>
                 <div class="d-flex flex-row justify-content-center align-self-start border border-dark">
-                    <span class="material-icons-outlined d-flex align-items-center me-2" style="font-size: 24px" onclick="removeFromCart(<?php echo $cartData["artikel_id"] ?>,loadShopCart)">remove</span>
-                    <h5 style="font-size: 24px!important; margin-bottom: 0px!important;"><?php echo $cartData["count"]?></h5>
-                    <span class="material-icons-outlined d-flex align-items-center ms-2" style="font-size: 24px" onclick="addToCart(<?php echo $cartData["artikel_id"] ?>,loadShopCart)">add</span>
+                    <span class="material-icons-outlined d-flex align-items-center me-2 clickable p-2" style="font-size: 24px" onclick="removeFromCart(<?php echo $cartData["artikel_id"] ?>,loadShopCart)">remove</span>
+                    <h5 class="d-inline-block align-middle" style="font-size: 24px!important; margin-bottom: 0px!important;"><?php echo $cartData["count"]?></h5>
+                    <span class="material-icons-outlined d-flex align-items-center ms-2 clickable" style="font-size: 24px" onclick="addToCart(<?php echo $cartData["artikel_id"] ?>,loadShopCart)">add</span>
                 </div>
             </div>
             <div class="col-1 d-flex p-1 align-items-center">

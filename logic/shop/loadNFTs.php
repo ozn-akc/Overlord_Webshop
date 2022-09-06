@@ -4,7 +4,7 @@ $sql = "SELECT * FROM nfts";
 $res = mysqli_query($my_db, $sql);
 
 if(isset($_GET["id"])){
-    $nftsql = "SELECT * FROM nfts WHERE id = '".$_GET["id"]."';";
+    $nftsql = "SELECT * FROM nfts WHERE id = '".mysqli_real_escape_string($my_db, $_GET["id"])."';";
     $nftres = mysqli_query($my_db, $nftsql);
     $item = mysqli_fetch_assoc($nftres);
     if(isset($item["id"])){

@@ -1,6 +1,6 @@
 <?php
 require('../database.php');
-$sql = "SELECT * FROM artikel WHERE id = ".$_GET["id"];
+$sql = "SELECT * FROM artikel WHERE id = ".mysqli_real_escape_string($my_db, $_GET["id"]);
 $res = mysqli_query($my_db, $sql);
 
 if($artikel = mysqli_fetch_assoc($res)){
