@@ -1,8 +1,8 @@
-function addToCart(artikel_id){
+function addToCart(artikel_id, func){
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = () =>{
         if(xhr.status==200 && xhr.readyState == 4){
-            loadCart();
+            func();
         }
     }
     const data = new FormData;
@@ -11,11 +11,11 @@ function addToCart(artikel_id){
     xhr.open("POST", "http://localhost/web/logic/cart/addToCart.php");
     xhr.send(data);
 }
-function removeFromCart(artikel_id){
+function removeFromCart(artikel_id, func){
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = () =>{
         if(xhr.status==200 && xhr.readyState == 4){
-            loadCart();
+            func();
         }
     }
     const data = new FormData;
@@ -24,11 +24,11 @@ function removeFromCart(artikel_id){
     xhr.open("POST", "http://localhost/web/logic/cart/addToCart.php");
     xhr.send(data);
 }
-function deleteFromCart(artikel_id){
+function deleteFromCart(artikel_id, func){
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = () =>{
         if(xhr.status==200 && xhr.readyState == 4){
-            loadCart();
+            func();
         }
     }
     const data = new FormData;

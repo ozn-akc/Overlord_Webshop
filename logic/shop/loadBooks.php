@@ -9,7 +9,7 @@ if(isset($_GET["count"])){
         if(isset($_COOKIE["loggedId"])){
             $buttonaction = 'data-bs-toggle="modal" data-bs-target="#signInModal"';
         }else{
-            $buttonaction = 'onclick="addToCart('. $artikel["id"].')"';
+            $buttonaction = 'onclick="addToCart('. $artikel["id"].',loadCart)"';
         }
         ?>
         <div class="artikel-container">
@@ -28,7 +28,7 @@ if(isset($_GET["count"])){
 }else{
     while($artikel = mysqli_fetch_assoc($res)){
         if(isset($_COOKIE["loggedId"])){
-            $buttonaction = 'onclick="addToCart('. $artikel["id"].')"';
+            $buttonaction = 'onclick="addToCart('. $artikel["id"].',loadCart)"';
         }else{
             $buttonaction = 'data-bs-toggle="modal" data-bs-target="#signInModal"';
         }

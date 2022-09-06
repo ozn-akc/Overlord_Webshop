@@ -5,7 +5,7 @@ $res = mysqli_query($my_db, $sql);
 
 if($artikel = mysqli_fetch_assoc($res)){
     if(isset($_COOKIE["loggedId"])){
-        $buttonaction = 'onclick="addToCart('. $artikel["id"].')"';
+        $buttonaction = 'onclick="addToCart('. $artikel["id"].',loadCart)"';
     }else{
         $buttonaction = 'data-bs-toggle="modal" data-bs-target="#signInModal"';
     }

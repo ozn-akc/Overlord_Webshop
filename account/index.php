@@ -11,9 +11,6 @@ include ("../account/signing.php");
 </body>
 </html>
 <script>
-    function enableById(elementId){
-        document.getElementById(elementId).disabled = !document.getElementById(elementId).disabled;
-    }
 
     function loadAddress(){
         const xhr = new XMLHttpRequest();
