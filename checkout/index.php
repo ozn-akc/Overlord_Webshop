@@ -11,6 +11,22 @@ include("../account/signing.php");
 </body>
 </html>
 <script>
+    function buyCart(){
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () =>{
+            if(xhr.status==200){
+                if(xhr.response == "-1"){
+                    alert("You need a valid Address to buy this shit.")
+                }else{
+                    document.getElementById("content").innerHTML = xhr.response;
+                }
+            }
+        }
+        xhr.open("POST", "http://localhost/web/logic/cart/buyCart.php/");
+        xhr.send(new FormData(userData));
+        return false;
+    }
+
     function loadShopCart(){
         const xhr = new XMLHttpRequest();
         xhr.onreadystatechange = () =>{

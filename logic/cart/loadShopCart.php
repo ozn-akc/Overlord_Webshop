@@ -12,15 +12,18 @@ if(isset($_COOKIE["loggedId"])) {
     $selectAddr = "SELECT * FROM `address` WHERE `user_id` = \"" . $userId . "\"";
     $addrResult = mysqli_query($my_db, $selectAddr);
     $addr = mysqli_fetch_assoc($addrResult);
+    $buttonstyle = "";
     if(isset($addr["plz"])){
         $selectCity = "SELECT * FROM `plz` WHERE `PLZ` = \"" . $addr["plz"] . "\"";
         $cityResult = mysqli_query($my_db, $selectCity);
         $city = mysqli_fetch_assoc($cityResult);
+        $buttonstyle = "";
     }else{
         $addr["street"] = "";
         $addr["plz"] = "";
         $addr["number"] = "";
         $city["PLZ-ONAME"] = "";
+        $buttonstyle = "disabled";
     }
 ?>
     <div class="col mb-4">
@@ -29,7 +32,7 @@ if(isset($_COOKIE["loggedId"])) {
             <h2 class="col-11 mb-0">Shipping Address</h2>
         </div>
         <div class="d-flex flex-row align-items-center" style="height: calc(100vh - 16rem)!important;">
-            <form class="col-10 mt-3 d-flex flex-column align-items-center justify-items-center" id="userData" onsubmit="return saveUserData()">
+            <form class="col-10 mt-3 d-flex flex-column align-items-center justify-items-center" id="userData" onsubmit="return buyCart()">
                 <div class="col-8 d-flex flex-row mb-4 justify-content-start">
                     <div class="col-12">
                         <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Nickname" value="<?php echo $user["nickname"];?>" disabled>
@@ -53,18 +56,12 @@ if(isset($_COOKIE["loggedId"])) {
                     <h2 class="text-center col-12 mb-4 mt-2">Address</h2>
                     <div class="col-8 d-flex flex-row mb-4 justify-content-start">
                         <div class="col-12">
-                            <input type="text" class="form-control" id="street" name="street" placeholder="Street" value="<?php echo $addr["street"];?>" disabled>
-                        </div>
-                        <div class="ms-3">
-                            <span class="icon material-icons-outlined clickable" onclick="enableById('street')">edit</span>
+                            <input type="text" class="form-control" id="street" name="street" placeholder="Street" value="<?php echo $addr["street"];?>" required>
                         </div>
                     </div>
                     <div class="col-8 d-flex flex-row mb-4 justify-content-start">
                         <div class="col-12">
-                            <input type="text" class="form-control" id="number" name="number" placeholder="Number" value="<?php echo $addr["number"];?>" disabled>
-                        </div>
-                        <div class="ms-3">
-                            <span class="icon material-icons-outlined clickable" onclick="enableById('number')">edit</span>
+                            <input type="text" class="form-control" id="number" name="number" placeholder="Number" value="<?php echo $addr["number"];?>" required>
                         </div>
                     </div>
                     <div class="col-8 d-flex flex-row mb-4 justify-content-start">
@@ -74,17 +71,14 @@ if(isset($_COOKIE["loggedId"])) {
                     </div>
                     <div class="col-8 d-flex flex-row mb-4 justify-content-start">
                         <div class="col-12 d-flex flex-column">
-                            <input type="text" class="form-control" id="code" name="code" placeholder="Code" value="<?php echo $addr["plz"];?>" disabled oninput="loadAddress()">
+                            <input type="text" class="form-control" id="code" name="code" placeholder="Code" value="<?php echo $addr["plz"];?>" oninput="loadAddress()" required>
                             <div class="invalid-feedback">
                                 PLZ ist nicht valide.
                             </div>
                         </div>
-                        <div class="ms-3">
-                            <span class="icon material-icons-outlined clickable" onclick="enableById('code')">edit</span>
-                        </div>
                     </div>
                 </div>
-                <input id="saveButton" type="submit" class="btn btn-light col-5 mt-3" value="Buy">
+                <input id="saveButton" type="submit" class="btn btn-light col-5 mt-3" value="Buy" <?php echo $buttonstyle;?>>
             </form>
         </div>
     </div>
@@ -107,10 +101,10 @@ if(isset($_COOKIE["loggedId"])) {
             </div>
             <div class="ps-2 d-flex flex-column col-9 justify-content-center align-items-center">
                 <h3 class="text-start align-self-start"><?php echo $artikelData["name"]?></h3>
-                <div class="d-flex flex-row justify-content-center align-self-start border border-dark">
+                <div class="d-flex flex-row justify-content-center align-self-start border border-light align-items-center">
                     <span class="material-icons-outlined d-flex align-items-center me-2 clickable p-2" style="font-size: 24px" onclick="removeFromCart(<?php echo $cartData["artikel_id"] ?>,loadShopCart)">remove</span>
-                    <h5 class="d-inline-block align-middle" style="font-size: 24px!important; margin-bottom: 0px!important;"><?php echo $cartData["count"]?></h5>
-                    <span class="material-icons-outlined d-flex align-items-center ms-2 clickable" style="font-size: 24px" onclick="addToCart(<?php echo $cartData["artikel_id"] ?>,loadShopCart)">add</span>
+                    <h5 class="d-inline-block align-middle col-md" style="font-size: 24px!important; margin-bottom: 0px!important;"><?php echo $cartData["count"]?></h5>
+                    <span class="material-icons-outlined d-flex align-items-center ms-2 clickable p-2" style="font-size: 24px" onclick="addToCart(<?php echo $cartData["artikel_id"] ?>,loadShopCart)">add</span>
                 </div>
             </div>
             <div class="col-1 d-flex p-1 align-items-center">
@@ -120,7 +114,6 @@ if(isset($_COOKIE["loggedId"])) {
         <?php
     }
     ?>
-
         </div>
     </div>
 <?php
