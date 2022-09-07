@@ -1,12 +1,7 @@
-<?php
-include ("../header.php");
-?>
+<?php include("../header.php");?>
 <body>
-<?php
-include("../navigation/navigation.php");
-include ("../account/signing.php");
-?>
-<div id="content" class="custom-container d-flex justify-content-center flex-wrap">
+<?php include("../navigation.php");?>
+<div id="content" class="main-container d-flex flex-wrap justify-content-center">
     <div class="d-flex flex-column align-items-center border-bottom pb-4 col-8" style="height: fit-content">
         <h1 class="text-center pb-4 mb-4">Home</h1>
         <div class="col-8">
@@ -55,8 +50,3 @@ include ("../account/signing.php");
     </div>
 </div>
 </body>
-</html>
-<script>
-</script>
-<style>
-</style>

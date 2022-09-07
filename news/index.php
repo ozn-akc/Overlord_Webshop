@@ -1,15 +1,9 @@
-<?php
-include ("../header.php");
-?>
+<?php include("../header.php");?>
 <body>
-<?php
-include("../navigation/navigation.php");
-include ("../account/signing.php");
-?>
-<div id="content" class="custom-container d-flex justify-content-center flex-wrap">
+<?php include("../navigation.php");?>
+<div id="content" class="main-container d-flex justify-content-center flex-wrap">
 </div>
 </body>
-</html>
 <script>
     function subscribe(user_id, news_id){
         const xhr = new XMLHttpRequest();
@@ -64,5 +58,3 @@ include ("../account/signing.php");
     }
     loadNews();
 </script>
-<style>
-</style>

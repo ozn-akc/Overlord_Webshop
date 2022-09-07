@@ -1,12 +1,7 @@
-<?php
-include ("header.php");
-?>
+<?php include("header.php");?>
 <body>
-<?php
-include ("navigation/navigation.php");
-include ("account/signing.php");
-?>
-<div id="content" class="custom-container d-flex justify-content-center">
+<?php include("navigation.php");?>
+<div id="content" class="main-container d-flex justify-content-start">
     <iframe class="video"" src="https://www.youtube.com/embed/videoseries?list=PLRe9ARNnYSY7C6g_GNhyiAh9YdIIZn80S&mute=1&autoplay=1"></iframe>
 </div>
 </body>

@@ -5,10 +5,10 @@ $sql = "SELECT * FROM user WHERE email = '" . $safe_email . "';";
 $res = mysqli_query($my_db, $sql);
 $dbdata = mysqli_fetch_assoc($res);
 if(isset($dbdata["email"])){
-    echo 1; //Email ist schon in der Datenbank vorhanden
+    echo -1; //Email ist schon in der Datenbank vorhanden
 }else{
     $password = hash("sha256", $_POST['password']);
-    $challenge = md5(rand() . time());
+    $challenge = md5(signUp.phprand());
     try {
         $salt = random_int(0, 999999);
     } catch (Exception $e) {
@@ -23,8 +23,12 @@ if(isset($dbdata["email"])){
     }
     try{
         $result = mysqli_query($my_db, $phpdatabase);
-        echo 0;
+        $sql = "SELECT * FROM user WHERE email = '" . $safe_email . "';";
+        $res = mysqli_query($my_db, $sql);
+        $dbdata = mysqli_fetch_assoc($res);
+        setcookie("loggedId", $dbdata["id"],array('path' => '/', 'expires' => time()+7200, 'secure' => true, 'samesite' => 'lax'));
+        echo 1;
     } catch(Exception $dbe){
-        echo 2;
+        echo -2;
     }
 }

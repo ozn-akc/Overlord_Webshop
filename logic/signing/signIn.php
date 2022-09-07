@@ -13,11 +13,11 @@ if(isset($_COOKIE["loggedId"])){
         $password = hash("sha256", $password.$dbdata["salt"]);
         if($dbdata["password"] == $password){
             setcookie("loggedId", $dbdata["id"],array('path' => '/', 'expires' => time()+7200, 'secure' => true, 'samesite' => 'lax'));
-            echo 0;//alles hat geklappt
+            echo 1;//alles hat geklappt
         }else{
-            echo 1;//passwort ist falsch
+            echo -2;//passwort ist falsch
         }
     }else{
-        echo 2;//email nicht vorhanden
+        echo -3;//email nicht vorhanden
     }
 }

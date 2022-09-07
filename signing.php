@@ -85,21 +85,21 @@
                 if(xhr.response==-1){
                     closeModal("signInModal");
                     alert("Already logged in");
-                }else if(xhr.response==0) {
+                }else if(xhr.response==1) {
                     document.getElementById("password1").className = "form-control";
                     document.getElementById("email1").className = "form-control";
                     closeModal("signInModal");
                     window.location.reload();
-                }else if(xhr.response==1){
+                }else if(xhr.response==-2){
                     document.getElementById("password1").className = "form-control is-invalid";
                     document.getElementById("email1").className = "form-control";
-                }else if(xhr.response==2){
+                }else if(xhr.response==-3){
                     document.getElementById("email1").className = "form-control is-invalid";
                     document.getElementById("password1").className = "form-control";
                 }
             }
         }
-        xhr.open("POST", "http://localhost/web/logic/loging/signIn.php");
+        xhr.open("POST", "http://localhost/web/logic/signing/signIn.php");
         xhr.send(new FormData(signInData));
         return false;
     }
@@ -107,15 +107,19 @@
         const xhr = new XMLHttpRequest();
         xhr.onreadystatechange = function() {
             if (this.readyState === 4 && this.status === 200) {
-                if(xhr.response==0) {
+                if(xhr.response==1) {
                     closeModal("signUpModal");
-                }else if(xhr.response==1){
+                    window.location.reload();
+                }else if(xhr.response==-1){
                     document.getElementById("password2").className = "form-control";
                     document.getElementById("email2").className = "form-control is-invalid";
+                }else if(xhr.response==-2){
+                    document.getElementById("password2").className = "form-control is-invalid";
+                    document.getElementById("email2").className = "form-control";
                 }
             }
         }
-        xhr.open("POST", "http://localhost/web/logic/loging/signUp.php");
+        xhr.open("POST", "http://localhost/web/logic/signing/signUp.php");
         xhr.send(new FormData(signUpData));
         return false;
     }
@@ -131,13 +135,13 @@
                 }
             }
         }
-        xhr.open("POST", "http://localhost/web/logic/loging/signOut.php");
+        xhr.open("POST", "http://localhost/web/logic/signing/signOut.php");
         xhr.send(new FormData(signOutData));
         return false;
     }
     function closeModal(id){
         let myModalEl = document.getElementById(id);
-        let modal = bootstrap.Modal.getInstance(myModalEl)
+        let modal = bootstrap.Modal.getInstance(myModalEl);
         modal.hide();
     }
 </script>

@@ -1,0 +1,38 @@
+body{
+    background-color: #202124!important;
+    color: white!important;
+}
+
+.btn-dark{
+    background-color: #3c4043!important;
+    color: white!important;
+}
+
+.modal-content{
+    background-color: #202124!important;
+}
+
+.form-control{
+    background-color: #202124!important;
+    color: white!important;
+}
+
+.form-control:disabled{
+    background-color: #3c4043!important;
+    color: white!important;
+}
+
+.dropdown-menu{
+    background-color: #202124!important;
+    color: white!important;
+}
+
+li a{
+    background-color: transparent!important;
+    color: white!important;
+}
+
+.navbar{
+    background-color: #202124!important;
+    color: white!important;
+}

@@ -25,7 +25,7 @@ if(isset($_COOKIE["loggedId"])) {
                               <span class="material-icons-outlined d-flex align-items-center ms-2" style="font-size: 16px" onclick="addToCart(' . $selectData["artikel_id"] . ',loadCart)">add</span>
                           </div>
                       </div>
-                      <div class="col-1 d-flex p-1">
+                      <div class="col-1 d-flex p-1 align-items-center">
                           <span class="material-icons-outlined" style="font-size: 20px" onclick="deleteFromCart(' . $selectData["artikel_id"] . ',loadCart)">close</span>
                       </div>
                   </div>

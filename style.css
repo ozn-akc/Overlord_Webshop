@@ -1,61 +1,36 @@
-body{
-    background-image: url("http://localhost/web/resources/logo/background.webp");
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white!important;
-    background-color: #202124!important;
-}
-
-.btn-dark{
-    background-color: #3c4043!important;
-    color: white!important;
-}
-
-.modal-content{
-    background-color: #202124!important;
-}
-
-.form-control{
-    background-color: #202124!important;
-    color: white!important;
-}
-
-.form-control:disabled{
-    background-color: #3c4043!important;
-    color: white!important;
-}
-
-.dropdown-menu{
-    background-color: #202124!important;
-    color: white!important;
-}
-
-li a{
-    background-color: transparent!important;
-    color: white!important;
-}
+/*
+Hier kommen die globalen styles rein
+*/
 
 .clickable{
     cursor: pointer;
 }
 
-.custom-container {
-    width: 100%;
-    height: calc(100vh  - 4rem);
-    padding: 3rem 8rem;
-    position: absolute!important;
-    top: 4rem!important;
-    overflow: auto;
+.main-container{
+    height: calc(100vh - 4rem);
+    width: calc(100%);
+    padding: 2rem 6rem;
+    position: relative;
+    top: 4rem;
 }
 
 .navbar{
     height: 4rem;
 }
 
-.icon{
-    font-size: 32px!important;
+.link-container{
+    margin-left: 2rem;
+}
+
+.icons-container{
+    margin-right:1rem;
+    width: calc(25% - 1rem)!important;
 }
 
 .icon-container{
-    margin: .5rem;
+    margin-right: 1rem;
+}
+
+.icon{
+    font-size: 2rem!important;
 }

@@ -1,5 +1,4 @@
 .artikel-container{
-    width: 20%;
     height: fit-content;
     padding: 1rem 2rem;
     display: flex;
@@ -10,7 +9,7 @@
 
 .image-container{
     position: relative;
-    width: 12rem;
+    width: 16rem;
 }
 .image{
     opacity: 1;
@@ -37,5 +36,5 @@
     opacity: 1;
 }
 .title{
-    width: 12rem;
+    width: 16rem;
 }

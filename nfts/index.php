@@ -1,15 +1,9 @@
-<?php
-include ("../header.php");
-?>
+<?php include("../header.php");?>
 <body>
-<?php
-include("../navigation/navigation.php");
-include ("../account/signing.php");
-?>
-<div id="content" class="custom-container d-flex flex-column justify-content-start">
+<?php include("../navigation.php");?>
+<div id="content" class="main-container d-flex flex-column justify-content-start">
 </div>
 </body>
-</html>
 <script>
     function loadNFTs(){
         const searchParams = window.location.search;
@@ -34,9 +28,6 @@ include ("../account/signing.php");
     }
 </script>
 <style>
-    .item-container{
-    }
-
     .artikel-container{
         width: 20%;
         height: fit-content;
