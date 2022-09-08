@@ -29,7 +29,7 @@
 </script>
 <style>
     .artikel-container{
-        width: 20%;
+        min-width: 18rem;
         height: fit-content;
         padding: 2%;
         display: flex;

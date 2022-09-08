@@ -27,7 +27,7 @@ if(isset($_GET["id"])){
 <?php
 while($artikel = mysqli_fetch_assoc($res)){
 ?>
-    <div class="artikel-container">
+    <div class="artikel-container col">
         <div class="image-container" onclick="window.location.href='http://localhost/web/nfts/?id=<?php echo $artikel["id"]?>'">
             <img class="image clickable" src="<?php echo $artikel["url"]?>">
         </div>
