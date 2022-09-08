@@ -2,6 +2,14 @@
 Hier kommen die globalen styles rein
 */
 
+.btn-outline-dark {
+    background-color: white!important;
+    color: black !important;
+    border: black !important;
+    border-width: 1px!important;
+    border-style: solid!important;
+}
+
 .clickable{
     cursor: pointer;
 }

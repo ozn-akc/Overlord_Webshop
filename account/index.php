@@ -1,6 +1,37 @@
 <?php include("../header.php");?>
-<body>
-<?php include("../navigation.php");?>
-<div id="content" class="main-container d-flex justify-content-start">
+<div id="content" class="main-container d-flex justify-content-center">
 </div>
 </body>
+<script>
+    function loadUserData(){
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () =>{
+            if(xhr.status==200){
+                if(xhr.response == "-1"){
+                }else{
+                    document.getElementById("content").innerHTML = xhr.response;
+                }
+            }
+        }
+        xhr.open("GET", "http://localhost/web/logic/account/loadUserData.php/");
+        xhr.send();
+    }
+    loadUserData();
+
+    function saveUserData(){
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = () =>{
+            if(xhr.status==200){
+                if(xhr.respone == "2"){
+                    document.getElementById("email").className="form-control is-invalid"
+                }else if(xhr.response == "1"){
+                    window.location.reload();
+                }
+            }
+        }
+        xhr.open("POST", "http://localhost/web/logic/account/saveUserData.php");
+        const data = new FormData(userData);
+        xhr.send(data);
+        return false;
+    }
+</script>

@@ -22,11 +22,11 @@ if(isset($_COOKIE["loggedId"])) {
             <?php
             if(isset($sub["user_id"])) {
                 ?>
-                <button class="btn btn-dark col-4 border border-0" onclick="unsubscribe(<?php echo $userId.",".$news["id"] ?>)">Unsubscribe</button>
+                <button class="btn btn-outline-dark col-4" onclick="unsubscribe(<?php echo $userId.",".$news["id"] ?>)">Unsubscribe</button>
                 <?php
             }else{
                 ?>
-                <button class="btn btn-light col-4 border border-0" onclick="subscribe(<?php echo $userId.",".$news["id"] ?>)">Subscribe</button>
+                <button class="btn btn-outline-dark col-4" onclick="subscribe(<?php echo $userId.",".$news["id"] ?>)">Subscribe</button>
                 <?php
             }
             ?>
@@ -43,7 +43,7 @@ if(isset($_COOKIE["loggedId"])) {
             <h5 class="mb-4">
                 <?php echo $news["description"] ?>
             </h5>
-            <button class="btn btn-light col-4" data-bs-toggle="modal" data-bs-target="#signInModal">Subscribe</button>
+            <button class="btn btn-outline-dark col-4" data-bs-toggle="modal" data-bs-target="#signInModal">Subscribe</button>
         </div>
 <?php
     }
@@ -55,6 +55,6 @@ if(isset($_COOKIE["loggedId"])) {
                 Surprise Newsletter!
             </h1>
             <input type="email" class="form-control mb-4" style="width: 50%!important;" id="email" name="email" placeholder="Email Adresse" required>
-            <button class="btn btn-light col-4" type="submit">Subscribe</button>
+            <button class="btn btn-outline-dark col-4" type="submit">Subscribe</button>
         </form>
     </div>

@@ -8,6 +8,14 @@ body{
     color: white!important;
 }
 
+.btn-outline-dark{
+    background-color: #202124!important;
+    color: white!important;
+    border: white!important;
+    border-width: 1px!important;
+    border-style: solid!important;
+}
+
 .modal-content{
     background-color: #202124!important;
 }

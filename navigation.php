@@ -1,4 +1,4 @@
-<div id="navigation" class="navbar fixed-top align-items-center">
+<div id="navigation" class="navbar fixed-top align-items-center border-bottom">
     <div id="links" class="col-3 d-flex">
         <div class="link-container">
             <h5 onclick="window.location.href='http://localhost/web/'">
