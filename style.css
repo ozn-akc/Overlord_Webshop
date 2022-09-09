@@ -1,6 +1,10 @@
 /*
 Hier kommen die globalen styles rein
 */
+.navbar{
+    background-color: white!important;
+    color: black!important;
+}
 
 .btn-outline-dark {
     background-color: white!important;

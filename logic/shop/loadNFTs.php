@@ -1,11 +1,10 @@
 <?php
 
 require __DIR__ . ('/../database.php');
-$sql = "SELECT * FROM nfts";
-$res = mysqli_query($my_db, $sql);
 
 if(isset($_GET["id"])){
-    $nftsql = "SELECT * FROM nfts WHERE id = '".mysqli_real_escape_string($my_db, $_GET["id"])."';";
+    $nftId = mysqli_real_escape_string($my_db, $_GET["id"]);
+    $nftsql = "SELECT * FROM nfts WHERE id = '".$nftId."';";
     $nftres = mysqli_query($my_db, $nftsql);
     $item = mysqli_fetch_assoc($nftres);
     if(isset($item["id"])){
@@ -22,6 +21,12 @@ if(isset($_GET["id"])){
         <?php
     }
 }
+if(isset($_GET["id"])){
+    $sql = "SELECT * FROM nfts where id != '".$nftId."'";
+}else{
+    $sql = "SELECT * FROM nfts";
+}
+$res = mysqli_query($my_db, $sql);
 ?>
 <div class="d-flex flex-row flex-wrap justify-content-start">
 <?php
