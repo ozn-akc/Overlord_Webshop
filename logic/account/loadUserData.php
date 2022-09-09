@@ -78,7 +78,7 @@ if(isset($_COOKIE["loggedId"])) {
                 </h4>
             </div>
             <div class="ms-3">
-                <input name="darkmode" class="form-check-input mt-0 icon" type="checkbox" <?php if($user["darkmode"]==1){echo "checked='1'";}?>>
+                <input name="darkmode" class="form-check-input mt-0 icon clickable" type="checkbox" <?php if($user["darkmode"]==1){echo "checked='1'";}?>>
             </div>
         </div>
         <input id="saveButton" type="submit" class="btn btn-outline-dark col-5 mt-3" value="Save">

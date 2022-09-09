@@ -34,7 +34,7 @@ if(isset($_COOKIE["loggedId"])) {
     }
     if ($hasData) {
         ?>
-            <li class="d-block text-center  mt-2"><Button class="btn btn-light col-10" onclick="window.location.href = '/web/checkout/'">Kaufen</Button>
+            <li class="d-block text-center  mt-2"><Button class="btn btn-outline-dark col-10" onclick="window.location.href = '/web/checkout/'">Kaufen</Button>
             </li>
         <?php
     }

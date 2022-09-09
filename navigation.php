@@ -1,12 +1,12 @@
 <div id="navigation" class="navbar fixed-top align-items-center border-bottom">
     <div id="links" class="col-3 d-flex">
         <div class="link-container">
-            <h5 onclick="window.location.href='http://localhost/web/'">
+            <h5 class="clickable" onclick="window.location.href='http://localhost/web/'">
                 Home
             </h5>
         </div>
         <div class="link-container dropdown">
-            <h5 class="dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <h5 class="dropdown-toggle clickable" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 Shop
             </h5>
             <ul class="dropdown-menu">
@@ -15,12 +15,12 @@
             </ul>
         </div>
         <div class="link-container">
-            <h5 onclick="window.location.href='http://localhost/web/news'">
+            <h5 class="clickable" onclick="window.location.href='http://localhost/web/news'">
                 News
             </h5>
         </div>
         <div class="link-container">
-            <h5 onclick="window.location.href='http://localhost/web/docs'">
+            <h5 class="clickable" onclick="window.location.href='http://localhost/web/docs'">
                 Docs
             </h5>
         </div>
