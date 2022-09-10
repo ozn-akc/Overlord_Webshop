@@ -1,5 +1,5 @@
 <?php include("../header.php");?>
-<div id="content" class="main-container d-flex justify-content-center flex-wrap">
+<div id="content" class="main-container justify-content-center flex-wrap">
 </div>
 </body>
 <script>

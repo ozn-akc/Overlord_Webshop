@@ -8,7 +8,7 @@ if(isset($dbdata["email"])){
     echo -1; //Email ist schon in der Datenbank vorhanden
 }else{
     $password = hash("sha256", $_POST['password']);
-    $challenge = md5(signUp.phprand());
+    $challenge = md5(rand() . time());
     try {
         $salt = random_int(0, 999999);
     } catch (Exception $e) {

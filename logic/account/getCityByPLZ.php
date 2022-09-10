@@ -8,7 +8,7 @@ if(isset($_COOKIE["loggedId"])) {
     if(isset($text["PLZ-ONAME"])){
         echo $text["PLZ-ONAME"];
     }else{
-        echo "2";
+        echo "-2";
     }
 }else{
     echo "-1";

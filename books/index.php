@@ -1,5 +1,5 @@
 <?php include("../header.php");?>
-<div id="content" class="main-container d-flex justify-content-start flex-wrap overflow-auto">
+<div id="content" class="main-container flex-wrap overflow-auto">
     <?php include("../logic/shop/loadBooks.php");?>
 </div>
 </body>

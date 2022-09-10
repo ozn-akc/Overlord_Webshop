@@ -38,7 +38,7 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (5,'70565','Musterstraße','123'),(18,'70182','straße','1234');
+INSERT INTO `address` VALUES (5,'70186','Musterstraße','123');
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +92,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (5,1,1),(5,2,1),(5,3,1),(5,4,1),(5,5,1),(17,16,1),(18,2,1),(18,3,3),(18,15,2),(18,16,1);
+INSERT INTO `cart` VALUES (5,8,3),(5,9,4),(5,10,3),(5,15,4),(5,16,3);
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -211,9 +211,10 @@ CREATE TABLE `user` (
   `password` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   `challenge` varchar(100) CHARACTER SET utf8mb3 COLLATE utf8mb3_bin NOT NULL,
   `salt` int NOT NULL,
+  `darkmode` tinyint(1) DEFAULT '1',
   PRIMARY KEY (`id`),
   UNIQUE KEY `email` (`email`)
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_bin;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -222,7 +223,7 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (4,'tests','tests@email.com','eb0ad1c1ff696a92dcd3e31d77617e7669a2722785fa2a1a2d76229ee0c087bc','b1150a35dde08979c388113b2b401994',722574),(5,'sevenGod','seven@gmail.com','1cfd4bb73c22afc9da1d23c53a01c7ddab03db1aa9b24acc4c737088a9721c40','7d6020195a8b641c49325273914c2374',363331),(7,'test','test@gmail.com','cc91d63932005883cd08c334a5b9104b7ac1a1c4f574662cac7e49263a13443e','938b078fff2e2a1b619a282c2e9b0b5c',655570),(12,'testingbich','bitch@email.com','c7b57db5ad69ee1b824ca37629cbbb23b8a7b7978f13c82a9881d5f2ea997689','b390a5676175028c2ebb4e53106a14d9',978402),(14,'testingbich','bitch1@email.com','6e76e0e27f8590baa8456744b8325827fbe824f9ff3ee64db8f29b03d53738fc','6f110e9de2bb5d735ed0fd5bea338889',557508),(15,'testingbich','testasdkj@email.com','0b865ea854c72242bd6b0958bc7fdcea522d4a5ddbf71616df8303c5da73f17e','4b99968329326b16bd078191becad260',858097),(16,'asd','asd@akhjsfbhd.com','cd09be1f66156ef8546996610935a71a0f9bd972da66114905cd53a9a9857707','8f04caa9ebf3b469f6b9f980ba7a8430',933706),(17,'testing','test@email.com','1d40c67603abe00c5815885c693a853d992bfb58ed58f2b247e47b2ada75432a','1bfba6658d75229f07bc24d7c3c6deff',617791),(18,'test','testing123@email.com','33b639626c1c101b40f5865b46df37e70e8cd817a5fc8a70683bea6ca268c914','f78249c0fe8e8011af557d2aa86c0830',2756),(19,NULL,'teiuasfd@email.com','acc5cbcb7dfc3c08134e36e6bcbfd5cb94978e749466e2040a3e4a30850e028d','2d600def6ac4a37f89d8fdae18f91551',221970),(21,NULL,'aasd@akjsd.sdjn','b4c7f702d612883ba573fbe0247507ae3c55a95e56ac134b17a8a6f6b1a49cf4','d8d475c87749cd733c3717b771b6b8e6',524978),(22,NULL,'seven@gmail.comaSD','3786b7f6df361d74bba1ced84eba12df8f193430db39fdacd4d01596c2790d29','03e662e39b99820209d319dbf84f546d',449881);
+INSERT INTO `user` VALUES (5,'sevenGod','seven@gmail.com','1cfd4bb73c22afc9da1d23c53a01c7ddab03db1aa9b24acc4c737088a9721c40','7d6020195a8b641c49325273914c2374',363331,1),(32,NULL,'testing123@email.com','bb4a77dd8a3128d0da29ee0a670e3a1aaff2ceaf6b7492ea7b06762efbaceea2','8043eb6e36cc8b61178fbc710705ec2e',757012,1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -249,7 +250,7 @@ CREATE TABLE `user_to_news` (
 
 LOCK TABLES `user_to_news` WRITE;
 /*!40000 ALTER TABLE `user_to_news` DISABLE KEYS */;
-INSERT INTO `user_to_news` VALUES (5,1);
+INSERT INTO `user_to_news` VALUES (5,2);
 /*!40000 ALTER TABLE `user_to_news` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -262,4 +263,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-06 20:16:40
+-- Dump completed on 2022-09-10 15:15:16

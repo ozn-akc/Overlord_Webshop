@@ -79,7 +79,7 @@ function loadAddress(){
         if(xhr.status==200){
             if(xhr.response == "-1"){
                 alert("You are not logged in!");
-            }else if(xhr.response == "2"){
+            }else if(xhr.response == "-2"){
                 document.getElementById("code").className="form-control is-invalid";
                 document.getElementById("saveButton").disabled = true;
             }else{

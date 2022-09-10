@@ -1,5 +1,5 @@
 <?php include("../header.php");?>
-<div id="content" class="main-container d-flex justify-content-start">
+<div id="content" class="main-container">
 </div>
 </body>
 <script>

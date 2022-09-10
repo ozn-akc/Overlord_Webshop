@@ -24,6 +24,8 @@ Hier kommen die globalen styles rein
     padding: 2rem 6rem;
     position: relative;
     top: 4rem;
+    display: flex;
+    justify-content: start;
 }
 
 .navbar{
