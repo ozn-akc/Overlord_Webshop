@@ -1,7 +1,7 @@
 <div id="navigation" class="navbar fixed-top align-items-center border-bottom">
     <div id="links" class="col-3 d-flex">
         <div class="link-container">
-            <h5 class="clickable" onclick="window.location.href='http://localhost/web/'">
+            <h5 class="clickable" onclick="window.location.href='/web/'">
                 Home
             </h5>
         </div>
@@ -10,17 +10,17 @@
                 Shop
             </h5>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item clickable" href="http://localhost/web/books/">Books</a></li>
-                <li><a class="dropdown-item clickable" href="http://localhost/web/nfts/">NFTs</a></li>
+                <li><a class="dropdown-item clickable" href="/web/books/">Books</a></li>
+                <li><a class="dropdown-item clickable" href="/web/nfts/">NFTs</a></li>
             </ul>
         </div>
         <div class="link-container">
-            <h5 class="clickable" onclick="window.location.href='http://localhost/web/news'">
+            <h5 class="clickable" onclick="window.location.href='/web/news'">
                 News
             </h5>
         </div>
         <div class="link-container">
-            <h5 class="clickable" onclick="window.location.href='http://localhost/web/docs'">
+            <h5 class="clickable" onclick="window.location.href='/web/docs'">
                 Docs
             </h5>
         </div>
@@ -33,7 +33,7 @@
         if(isset($_COOKIE["loggedId"])){
             ?>
             <div class="icon-container">
-                <span class="material-icons-round icon clickable" onclick="window.location.href='http://localhost/web/account/'">account_circle</span>
+                <span class="material-icons-round icon clickable" onclick="window.location.href='/web/account/'">account_circle</span>
             </div>
             <div class="icon-container">
                 <div class="position-relative">

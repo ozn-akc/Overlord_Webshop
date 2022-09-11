@@ -13,7 +13,7 @@
         const data = new FormData();
         data.append("user_id",user_id);
         data.append("news_id",news_id);
-        xhr.open("POST", "http://localhost/web/logic/news/subscribeToNews.php");
+        xhr.open("POST", "../logic/news/subscribeToNews.php");
         xhr.send(data);
     }
 
@@ -27,7 +27,7 @@
         const data = new FormData();
         data.append("user_id",user_id);
         data.append("news_id",news_id);
-        xhr.open("POST", "http://localhost/web/logic/news/unsubscribeToNews.php");
+        xhr.open("POST", "../logic/news/unsubscribeToNews.php");
         xhr.send(data);
     }
 
@@ -39,7 +39,7 @@
             }
         }
         const data = new FormData(newsletter);
-        xhr.open("POST", "http://localhost/web/logic/news/addEmailToNewsletter.php");
+        xhr.open("POST", "../logic/news/addEmailToNewsletter.php");
         xhr.send(data);
         return false;
     }
@@ -51,7 +51,7 @@
                 document.getElementById("content").innerHTML = xhr.response;
             }
         }
-        xhr.open("GET", "http://localhost/web/logic/news/loadNews.php");
+        xhr.open("GET", "../logic/news/loadNews.php");
         xhr.send();
     }
     loadNews();

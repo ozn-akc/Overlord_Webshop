@@ -11,7 +11,7 @@
                 document.getElementById("content").innerHTML = xhr.response;
             }
         }
-        xhr.open("GET", "http://localhost/web/logic/shop/loadShopItem.php/"+searchParams);
+        xhr.open("GET", "../logic/shop/loadShopItem.php/"+searchParams);
         xhr.send();
     }
     loadArtikel();
