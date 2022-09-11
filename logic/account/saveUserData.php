@@ -26,30 +26,38 @@ if(isset($_COOKIE["loggedId"])) {
 
     if(isset($_POST["darkmode"])){
         $updateDarkmode = "UPDATE user SET darkmode = 1 ".$whereUser;
+        mysqli_query($my_db, $updateDarkmode); //possibly add to end
     }else{
         $updateDarkmode = "UPDATE user SET darkmode = 0 ".$whereUser;
+        mysqli_query($my_db, $updateDarkmode); //possibly add to end
     }
-    mysqli_query($my_db, $updateDarkmode); //possibly add to end
 
-    $selectAddr = "SELECT * FROM `address` WHERE `user_id` = \"" . $userId . "\"";
+    $selectAddr = "SELECT * FROM address WHERE user_id = \"" . $userId . "\"";
     $addrResult = mysqli_query($my_db, $selectAddr);
     $addr = mysqli_fetch_assoc($addrResult);
     $whereAddr = "WHERE user_id = \"".$userId."\"";
 
-    if(isset($_POST["street"]) && $_POST["street"]!=$addr["street"]){
-        $updateStreet = "UPDATE address SET street = \"".$_POST["street"]."\"".$whereAddr;
-        mysqli_query($my_db, $updateStreet); //possibly add to end
+    if(isset($addr["plz"])){
+        if(isset($_POST["street"]) && $_POST["street"]!=$addr["street"]){
+            $updateStreet = "UPDATE address SET street = \"".mysqli_escape_string($my_db,$_POST["street"])."\"".$whereAddr;
+            mysqli_query($my_db, $updateStreet); //possibly add to end
+        }
+
+        if(isset($_POST["number"]) && $_POST["number"]!=$addr["number"]){
+            $updateNumber = "UPDATE address SET number = \"".mysqli_escape_string($my_db,$_POST["number"])."\"".$whereAddr;
+            mysqli_query($my_db, $updateNumber); //possibly add to end
+        }
+
+        if(isset($_POST["code"]) && $_POST["code"]!=$addr["plz"]){
+            $updateCode = "UPDATE address SET plz = \"".$_POST["code"]."\"".$whereAddr;
+            mysqli_query($my_db, $updateCode); //possibly add to end
+        }
+    }else{
+        $insertAddress = "INSERT INTO address (user_id, street, number, plz) 
+                            VALUES (\"".$userId."\",\"".mysqli_escape_string($my_db,$_POST["street"])."\",\"".mysqli_escape_string($my_db,$_POST["number"])."\",\"".$_POST["code"]."\")";
+        mysqli_query($my_db, $insertAddress);
     }
 
-    if(isset($_POST["number"]) && $_POST["number"]!=$addr["number"]){
-        $updateNumber = "UPDATE address SET number = \"".$_POST["number"]."\"".$whereAddr;
-        mysqli_query($my_db, $updateNumber); //possibly add to end
-    }
-
-    if(isset($_POST["code"]) && $_POST["code"]!=$addr["plz"]){
-        $updateCode = "UPDATE address SET plz = \"".$_POST["code"]."\"".$whereAddr;
-        mysqli_query($my_db, $updateCode); //possibly add to end
-    }
     echo "1";
 
 }else{

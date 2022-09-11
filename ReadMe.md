@@ -5,3 +5,4 @@ Falls das Projekt in einen neuen unterordner verschoben werden soll,
 müssen diese Pfade manuell angepasst werden. Zudem soll das Projekt 
 in der abgegebenen Ordnerstruckter verwendet werden, also im Ordner 
 /web/, damit die navigation nicht fehlschlägt.
+Urheberrechte sind etwas für BITCHES.

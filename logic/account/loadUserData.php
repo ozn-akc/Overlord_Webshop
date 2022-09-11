@@ -5,7 +5,7 @@ if(isset($_COOKIE["loggedId"])) {
     $userResult = mysqli_query($my_db, $selectUser);
     $user = mysqli_fetch_assoc($userResult);
     ?>
-    <form class="col-4 mt-5 d-flex flex-column align-items-center justify-items-center" id="userData" onsubmit="return saveUserData()">
+    <form class="col-4 mt-5 d-flex flex-column align-items-center justify-items-center needs-validation" id="userData" onsubmit="return saveUserData()">
         <div class="col-8 d-flex flex-row mb-4 justify-content-start">
             <div class="col-12">
                 <input type="text" class="form-control" id="nickname" name="nickname" placeholder="Nickname" value="<?php echo $user["nickname"];?>" disabled>
@@ -16,7 +16,7 @@ if(isset($_COOKIE["loggedId"])) {
         </div>
         <div class="col-8 d-flex flex-row mb-4 justify-content-start">
             <div class="col-12 d-flex flex-column">
-                <input type="email" class="form-control" id="email" name="email" placeholder="Email Adresse" value="<?php echo $user["email"];?>" disabled>
+                <input type="email" class="form-control" id="email" name="email" placeholder="Email Adresse" value="<?php echo $user["email"];?>" disabled required>
                 <div class="invalid-feedback">
                     Es existiert bereits ein Account für diese Email.
                 </div>
@@ -40,7 +40,7 @@ if(isset($_COOKIE["loggedId"])) {
             <h2 class="text-center col-12 mb-4 mt-2">Address</h2>
             <div class="col-8 d-flex flex-row mb-4 justify-content-start">
                 <div class="col-12">
-                    <input type="text" class="form-control" id="street" name="street" placeholder="Street" value="<?php echo $addr["street"];?>" disabled>
+                    <input type="text" class="form-control" id="street" name="street" placeholder="Street" value="<?php echo $addr["street"];?>" disabled required>
                 </div>
                 <div class="ms-3">
                     <span class="icon material-icons-outlined clickable" onclick="enableById('street')">edit</span>
@@ -48,7 +48,7 @@ if(isset($_COOKIE["loggedId"])) {
             </div>
             <div class="col-8 d-flex flex-row mb-4 justify-content-start">
                 <div class="col-12">
-                    <input type="text" class="form-control" id="number" name="number" placeholder="Number" value="<?php echo $addr["number"];?>" disabled>
+                    <input type="text" class="form-control" id="number" name="number" placeholder="Number" value="<?php echo $addr["number"];?>" disabled required>
                 </div>
                 <div class="ms-3">
                     <span class="icon material-icons-outlined clickable" onclick="enableById('number')">edit</span>
@@ -61,7 +61,7 @@ if(isset($_COOKIE["loggedId"])) {
             </div>
             <div class="col-8 d-flex flex-row mb-4 justify-content-start">
                 <div class="col-12 d-flex flex-column">
-                    <input type="text" class="form-control" id="code" name="code" placeholder="Code" value="<?php echo $addr["plz"];?>" disabled oninput="loadAddress()">
+                    <input type="text" class="form-control" id="code" name="code" placeholder="Code" value="<?php echo $addr["plz"];?>" disabled oninput="loadAddress()" required>
                     <div class="invalid-feedback">
                         PLZ ist nicht valide.
                     </div>
@@ -81,7 +81,7 @@ if(isset($_COOKIE["loggedId"])) {
                 <input name="darkmode" class="form-check-input mt-0 icon clickable" type="checkbox" <?php if($user["darkmode"]==1){echo "checked='1'";}?>>
             </div>
         </div>
-        <input id="saveButton" type="submit" class="btn btn-outline-dark col-5 mt-3" value="Save">
+        <input id="saveButton" type="submit" class="btn btn-outline-dark col-5 mt-3" value="Save" <?php if(!isset($addr["street"])){echo "disabled";}?>>
     </form>
 
     <?php

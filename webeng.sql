@@ -38,7 +38,6 @@ CREATE TABLE `address` (
 
 LOCK TABLES `address` WRITE;
 /*!40000 ALTER TABLE `address` DISABLE KEYS */;
-INSERT INTO `address` VALUES (5,'70186','Musterstraße','123');
 /*!40000 ALTER TABLE `address` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -92,7 +91,6 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (5,8,3),(5,9,4),(5,10,3),(5,15,4),(5,16,3);
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -140,7 +138,7 @@ CREATE TABLE `newsletter` (
 
 LOCK TABLES `newsletter` WRITE;
 /*!40000 ALTER TABLE `newsletter` DISABLE KEYS */;
-INSERT INTO `newsletter` VALUES ('seven@email.com'),('seven@gmail.com'),('test@email.com');
+INSERT INTO `newsletter` VALUES ('seven@email.com'),('seven@gmail.com'),('test@email.com'),('testing123@email.com');
 /*!40000 ALTER TABLE `newsletter` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -223,7 +221,6 @@ CREATE TABLE `user` (
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;
-INSERT INTO `user` VALUES (5,'sevenGod','seven@gmail.com','1cfd4bb73c22afc9da1d23c53a01c7ddab03db1aa9b24acc4c737088a9721c40','7d6020195a8b641c49325273914c2374',363331,1),(32,NULL,'testing123@email.com','bb4a77dd8a3128d0da29ee0a670e3a1aaff2ceaf6b7492ea7b06762efbaceea2','8043eb6e36cc8b61178fbc710705ec2e',757012,1);
 /*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -250,7 +247,6 @@ CREATE TABLE `user_to_news` (
 
 LOCK TABLES `user_to_news` WRITE;
 /*!40000 ALTER TABLE `user_to_news` DISABLE KEYS */;
-INSERT INTO `user_to_news` VALUES (5,2);
 /*!40000 ALTER TABLE `user_to_news` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -263,4 +259,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2022-09-10 15:15:16
+-- Dump completed on 2022-09-11 18:07:48
