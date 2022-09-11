@@ -1,5 +1,6 @@
 <?php
 
+include ("../../URLLink.php");
 require __DIR__ . ('/../database.php');
 
 if(isset($_GET["id"])){
@@ -11,7 +12,7 @@ if(isset($_GET["id"])){
         ?>
         <div class="item-container d-flex flex-column justify-content-center align-items-center border-bottom">
             <div class="image-container">
-                <img class="image clickable" src="<?php echo $item["url"]?>">
+                <img class="image clickable" src="<?php echo $URLLINK.$item["url"]?>">
             </div>
             <div class="m-3"></div>
             <div class="m-3 col-12 d-flex justify-content-center">
@@ -33,8 +34,8 @@ $res = mysqli_query($my_db, $sql);
 while($artikel = mysqli_fetch_assoc($res)){
 ?>
     <div class="artikel-container col">
-        <div class="image-container" onclick="window.location.href='<?php echo $URLLINK ?>?id=<?php echo $artikel["id"]?>'">
-            <img class="image clickable" src="<?php echo $artikel["url"]?>">
+        <div class="image-container" onclick="window.location.href='<?php echo $URLLINK ?>nfts?id=<?php echo $artikel["id"]?>'">
+            <img class="image clickable" src="<?php echo $URLLINK.$artikel["url"]?>">
         </div>
     </div>
     <?php

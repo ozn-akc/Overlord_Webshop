@@ -1,7 +1,10 @@
+<?php
+include ("../../URLLink.php");
+?>
 <div id="navigation" class="navbar fixed-top align-items-center border-bottom">
     <div id="links" class="col-3 d-flex">
         <div class="link-container">
-            <h5 class="clickable" onclick="window.location.href='/web/'">
+            <h5 class="clickable" onclick="window.location.href='<?php echo $URLLINK ?>'">
                 Home
             </h5>
         </div>
@@ -10,17 +13,17 @@
                 Shop
             </h5>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item clickable" href="/web/books/">Books</a></li>
-                <li><a class="dropdown-item clickable" href="/web/nfts/">NFTs</a></li>
+                <li><a class="dropdown-item clickable" href="<?php echo $URLLINK ?>books/">Books</a></li>
+                <li><a class="dropdown-item clickable" href="<?php echo $URLLINK ?>nfts/">NFTs</a></li>
             </ul>
         </div>
         <div class="link-container">
-            <h5 class="clickable" onclick="window.location.href='/web/news'">
+            <h5 class="clickable" onclick="window.location.href='<?php echo $URLLINK ?>news'">
                 News
             </h5>
         </div>
         <div class="link-container">
-            <h5 class="clickable" onclick="window.location.href='/web/docs'">
+            <h5 class="clickable" onclick="window.location.href='<?php echo $URLLINK ?>docs'">
                 Docs
             </h5>
         </div>
@@ -33,7 +36,7 @@
         if(isset($_COOKIE["loggedId"])){
             ?>
             <div class="icon-container">
-                <span class="material-icons-round icon clickable" onclick="window.location.href='/web/account/'">account_circle</span>
+                <span class="material-icons-round icon clickable" onclick="window.location.href='<?php echo $URLLINK ?>account/'">account_circle</span>
             </div>
             <div class="icon-container">
                 <div class="position-relative">

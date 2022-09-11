@@ -20,7 +20,7 @@
         ?>
         <div class="d-flex flex-row cart-item <?php if($rows!=$count){echo "border-bottom";}?> p-1">
             <div class="pe-2 col-2 d-flex align-items-center">
-                <a href="/web/artikel/?id=<?php echo $artikelData["id"]?>"><img class="p-1" src="<?php echo $artikelData["url"]?>" alt="shit" style="height: 12rem"></a>
+                <a href="<?php echo $URLLINK ?>artikel/?id=<?php echo $artikelData["id"]?>"><img class="p-1" src="<?php echo $URLLINK.$artikelData["url"]?>" alt="shit" style="height: 12rem"></a>
             </div>
             <div class="ps-2 d-flex flex-column col-9 justify-content-center align-items-center">
                 <div class="text-start fs-2"><?php echo $artikelData["name"]?></div>

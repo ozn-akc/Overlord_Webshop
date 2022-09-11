@@ -1,7 +1,7 @@
 /*
 Hier kommen globale Funktionen rein
  */
-URLLINK = "http://localhost/web/"
+URLLINK = "http://localhost/test/test/test/web/"
 function addToCart(artikel_id, func){
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = () =>{

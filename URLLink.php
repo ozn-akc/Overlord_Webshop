@@ -1,2 +1,2 @@
 <?php
-$URLLINK = "http://localhost/web/";
+$URLLINK = "http://localhost/test/test/test/web/";
