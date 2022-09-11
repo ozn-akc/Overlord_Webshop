@@ -1,6 +1,7 @@
 /*
 Hier kommen globale Funktionen rein
  */
+URLLINK = "http://localhost/web/"
 function addToCart(artikel_id, func){
     const xhr = new XMLHttpRequest();
     xhr.onreadystatechange = () =>{
@@ -11,7 +12,7 @@ function addToCart(artikel_id, func){
     const data = new FormData;
     data.append("artikel_id",artikel_id);
     data.append("anzahl","1");
-    xhr.open("POST", "http://localhost/web/logic/cart/addToCart.php");
+    xhr.open("POST", URLLINK+"logic/cart/addToCart.php");
     xhr.send(data);
 }
 function removeFromCart(artikel_id, func){
@@ -24,7 +25,7 @@ function removeFromCart(artikel_id, func){
     const data = new FormData;
     data.append("artikel_id",artikel_id);
     data.append("anzahl","-1");
-    xhr.open("POST", "http://localhost/web/logic/cart/addToCart.php");
+    xhr.open("POST", URLLINK+"logic/cart/addToCart.php");
     xhr.send(data);
 }
 function deleteFromCart(artikel_id, func){
@@ -36,7 +37,7 @@ function deleteFromCart(artikel_id, func){
     }
     const data = new FormData;
     data.append("artikel_id",artikel_id);
-    xhr.open("POST", "http://localhost/web/logic/cart/deleteFromCart.php");
+    xhr.open("POST", URLLINK+"logic/cart/deleteFromCart.php");
     xhr.send(data);
 }
 function loadCart(){
@@ -49,7 +50,7 @@ function loadCart(){
             }
         }
     }
-    xhr.open("GET", "http://localhost/web/logic/cart/loadCartDropdown.php/");
+    xhr.open("GET", URLLINK+"logic/cart/loadCartDropdown.php/");
     xhr.send();
 }
 loadCart();
@@ -63,7 +64,7 @@ function loadCartCount(){
             }
         }
     }
-    xhr.open("GET", "http://localhost/web/logic/cart/getCartCount.php");
+    xhr.open("GET", URLLINK+"logic/cart/getCartCount.php");
     xhr.send();
 }
 
@@ -90,6 +91,6 @@ function loadAddress(){
         }
     }
     const data = new FormData(userData);
-    xhr.open("GET", "http://localhost/web/logic/account/getCityByPLZ.php/?" + new URLSearchParams(data).toString());
+    xhr.open("GET", URLLINK+"logic/account/getCityByPLZ.php/?" + new URLSearchParams(data).toString());
     xhr.send();
 }

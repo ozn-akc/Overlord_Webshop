@@ -17,7 +17,7 @@ while($artikel = mysqli_fetch_assoc($res)){
             </div>
             <img class="image clickable" src="<?php echo $artikel["url"]?>">
         </div>
-        <div class="title mt-2 clickable" onclick="window.location.href = 'http://localhost/web/artikel/?id=<?php echo $artikel["id"]?>'">
+        <div class="title mt-2 clickable" onclick="window.location.href = '<?php echo $URLLINK ?>artikel/?id=<?php echo $artikel["id"]?>'">
             <?php echo $artikel["name"]?>
         </div>
     </div>
