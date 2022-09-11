@@ -15,8 +15,8 @@ if(isset($dbdata["email"])){
 
     }
     $password = hash("sha256", $password.$salt);
-    if(isset($_POST['nickname'])){
-        $nickname = mysqli_real_escape_string($my_db, $_POST['nickname']);
+    if(isset($_POST['name'])){
+        $nickname = mysqli_real_escape_string($my_db, $_POST['name']);
         $phpdatabase = "INSERT INTO `user` (nickname, email, password, challenge, salt) VALUES (\"$nickname\",\"$safe_email\", \"$password\", \"$challenge\", \"$salt\")";
     }else{
         $phpdatabase = "INSERT INTO `user` (email, password, challenge, salt) VALUES (\"$safe_email\", \"$password\", \"$challenge\", \"$salt\")";
