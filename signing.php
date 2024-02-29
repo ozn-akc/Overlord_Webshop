@@ -99,7 +99,7 @@
                 }
             }
         }
-        xhr.open("POST", URLLINK+"logic/signing/signIn.php");
+        xhr.open("POST", "/logic/signing/signIn.php");
         xhr.send(new FormData(signInData));
         return false;
     }
@@ -119,7 +119,7 @@
                 }
             }
         }
-        xhr.open("POST",  URLLINK+"logic/signing/signUp.php");
+        xhr.open("POST",  "/logic/signing/signUp.php");
         xhr.send(new FormData(signUpData));
         return false;
     }
@@ -135,7 +135,7 @@
                 }
             }
         }
-        xhr.open("POST",  URLLINK+"logic/signing/signOut.php");
+        xhr.open("POST",  "/logic/signing/signOut.php");
         xhr.send(new FormData(signOutData));
         return false;
     }

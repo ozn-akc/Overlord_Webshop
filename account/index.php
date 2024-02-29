@@ -13,7 +13,7 @@
                 }
             }
         }
-        xhr.open("GET", "../logic/account/loadUserData.php/");
+        xhr.open("GET", "/logic/account/loadUserData.php/");
         xhr.send();
     }
     loadUserData();
@@ -29,7 +29,7 @@
                 }
             }
         }
-        xhr.open("POST", "../logic/account/saveUserData.php");
+        xhr.open("POST", "/logic/account/saveUserData.php");
         const data = new FormData(userData);
         xhr.send(data);
         return false;

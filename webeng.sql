@@ -123,13 +123,15 @@ UNLOCK TABLES;
 -- Table structure for table `newsletter`
 --
 
+
+
 DROP TABLE IF EXISTS `newsletter`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `newsletter` (
   `email` varchar(200) NOT NULL,
   PRIMARY KEY (`email`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -217,6 +219,8 @@ CREATE TABLE `user` (
 --
 -- Dumping data for table `user`
 --
+
+INSERT INTO `user` (nickname, email, password, challenge, salt) VALUES ('test', 'test@email.com', 'test', 'challenge', 123456)
 
 LOCK TABLES `user` WRITE;
 /*!40000 ALTER TABLE `user` DISABLE KEYS */;

@@ -1,7 +1,7 @@
 <?php
-$sqlhost = "localhost";
+$sqlhost = "database";
 $sqluser = "root";
-$sqlpass = "";
+$sqlpass = "example";
 $dbname  = "webeng";
 
 $my_db = mysqli_connect($sqlhost, $sqluser, $sqlpass, $dbname);

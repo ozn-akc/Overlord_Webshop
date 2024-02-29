@@ -1,5 +1,5 @@
 <?php
-include ("../../URLLink.php");
+include ("../URLLink.php");
 require __DIR__ . ('/../database.php');
 $sql = "SELECT * FROM artikel";
 $res = mysqli_query($my_db, $sql);
@@ -18,7 +18,7 @@ while($artikel = mysqli_fetch_assoc($res)){
             </div>
             <img class="image clickable" src="<?php echo $URLLINK.$artikel["url"]?>">
         </div>
-        <div class="title mt-2 clickable" onclick="window.location.href = '<?php echo $URLLINK ?>artikel/?id=<?php echo $artikel["id"]?>'">
+        <div class="title mt-2 clickable" onclick="window.location.href = '/artikel/?id=<?php echo $artikel["id"]?>'">
             <?php echo $artikel["name"]?>
         </div>
     </div>

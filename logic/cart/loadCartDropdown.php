@@ -1,5 +1,4 @@
 <?php
-include "../../URLLink.php";
 if(isset($_COOKIE["loggedId"])) {
     require('../database.php');
     $userId = $_COOKIE["loggedId"];
@@ -21,7 +20,7 @@ if(isset($_COOKIE["loggedId"])) {
             <li class="d-block">
                   <div class="d-flex flex-row cart-item <?php if($rows!=$count){echo "border-bottom";}?> p-1">
                       <div class="pe-2 col-2 d-flex align-items-center">
-                          <a href="<?php echo $URLLINK ?>artikel/?id=<?php echo $artikelData["id"]?>"><img class="p-1" src="<?php echo $URLLINK.$artikelData["url"]?>" alt="shit" style="height: 80px"></a>
+                          <a href="/artikel/?id=<?php echo $artikelData["id"]?>"><img class="p-1" src="<?php echo "/"+$artikelData["url"]?>" alt="shit" style="height: 80px"></a>
                       </div>
                       <div class="ps-2 d-flex flex-column col-9 justify-content-center align-items-center">
                           <div class="text-start"><?php echo $artikelData["name"]?></div>
@@ -41,12 +40,12 @@ if(isset($_COOKIE["loggedId"])) {
     if ($hasData) {
         if(isset($addressData["user_id"])){
             ?>
-            <li class="d-block text-center  mt-2"><Button class="btn btn-outline-dark col-10" onclick="window.location.href = '<?php echo $URLLINK ?>receipt/'">Buy</Button>
+            <li class="d-block text-center  mt-2"><Button class="btn btn-outline-dark col-10" onclick="window.location.href = '/receipt/'">Buy</Button>
             </li>
             <?php
         }else{
             ?>
-            <li class="d-block text-center  mt-2"><Button class="btn btn-outline-dark col-10" onclick="alert('PLEASE ADD YOUR ADDRESS TO CONTINUE SHOPPING');window.location.href = '<?php echo $URLLINK ?>account/'">Add Address</Button>
+            <li class="d-block text-center  mt-2"><Button class="btn btn-outline-dark col-10" onclick="alert('PLEASE ADD YOUR ADDRESS TO CONTINUE SHOPPING');window.location.href = '/account/'">Add Address</Button>
             </li>
             <?php
         }

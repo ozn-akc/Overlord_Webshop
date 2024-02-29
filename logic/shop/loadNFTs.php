@@ -34,7 +34,7 @@ $res = mysqli_query($my_db, $sql);
 while($artikel = mysqli_fetch_assoc($res)){
 ?>
     <div class="artikel-container col">
-        <div class="image-container" onclick="window.location.href='<?php echo $URLLINK ?>nfts?id=<?php echo $artikel["id"]?>'">
+        <div class="image-container" onclick="window.location.href='/nfts?id=<?php echo $artikel["id"]?>'">
             <img class="image clickable" src="<?php echo $URLLINK.$artikel["url"]?>">
         </div>
     </div>

@@ -1,10 +1,10 @@
 <?php
-include ("../../URLLink.php");
+include ("URLLink.php");
 ?>
 <div id="navigation" class="navbar fixed-top align-items-center border-bottom">
     <div id="links" class="col-3 d-flex">
         <div class="link-container">
-            <h5 class="clickable" onclick="window.location.href='<?php echo $URLLINK ?>'">
+            <h5 class="clickable" onclick="window.location.href='/'">
                 Home
             </h5>
         </div>
@@ -13,17 +13,17 @@ include ("../../URLLink.php");
                 Shop
             </h5>
             <ul class="dropdown-menu">
-                <li><a class="dropdown-item clickable" href="<?php echo $URLLINK ?>books/">Books</a></li>
-                <li><a class="dropdown-item clickable" href="<?php echo $URLLINK ?>nfts/">NFTs</a></li>
+                <li><a class="dropdown-item clickable" href="/books/">Books</a></li>
+                <li><a class="dropdown-item clickable" href="/nfts/">NFTs</a></li>
             </ul>
         </div>
         <div class="link-container">
-            <h5 class="clickable" onclick="window.location.href='<?php echo $URLLINK ?>news'">
+            <h5 class="clickable" onclick="window.location.href='/news'">
                 News
             </h5>
         </div>
         <div class="link-container">
-            <h5 class="clickable" onclick="window.location.href='<?php echo $URLLINK ?>docs'">
+            <h5 class="clickable" onclick="window.location.href='/docs'">
                 Docs
             </h5>
         </div>
@@ -36,7 +36,7 @@ include ("../../URLLink.php");
         if(isset($_COOKIE["loggedId"])){
             ?>
             <div class="icon-container">
-                <span class="material-icons-round icon clickable" onclick="window.location.href='<?php echo $URLLINK ?>account/'">account_circle</span>
+                <span class="material-icons-round icon clickable" onclick="window.location.href='/account/'">account_circle</span>
             </div>
             <div class="icon-container">
                 <div class="position-relative">
