@@ -20,7 +20,7 @@ if(isset($_COOKIE["loggedId"])) {
             <li class="d-block">
                   <div class="d-flex flex-row cart-item <?php if($rows!=$count){echo "border-bottom";}?> p-1">
                       <div class="pe-2 col-2 d-flex align-items-center">
-                          <a href="/artikel/?id=<?php echo $artikelData["id"]?>"><img class="p-1" src="<?php echo "/"+$artikelData["url"]?>" alt="shit" style="height: 80px"></a>
+                          <a href="/artikel/?id=<?php echo $artikelData["id"]?>"><img class="p-1" src="<?php echo $artikelData["url"]?>" alt="shit" style="height: 80px"></a>
                       </div>
                       <div class="ps-2 d-flex flex-column col-9 justify-content-center align-items-center">
                           <div class="text-start"><?php echo $artikelData["name"]?></div>

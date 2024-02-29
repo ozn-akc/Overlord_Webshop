@@ -26,7 +26,6 @@ if(isset($_COOKIE["loggedId"])) {
             </div>
         </div>
 <?php
-
     $selectAddr = "SELECT * FROM `address` WHERE `user_id` = \"" . $_COOKIE["loggedId"] . "\"";
     $addrResult = mysqli_query($my_db, $selectAddr);
     $addr = mysqli_fetch_assoc($addrResult);
