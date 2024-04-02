@@ -1,7 +1,7 @@
 
 services:
   db:
-    image: webeng_db
+    image: svnelv/webeng_db
     restart: always
     hostname: database
     ports:
